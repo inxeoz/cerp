@@ -15,6 +15,8 @@
 // })
 
 
+/// in client side use non-critical features and there implementation
+
 frappe.ui.form.on("Requirement Document", {
     refresh(frm) {
 
@@ -41,7 +43,6 @@ frappe.ui.form.on("Requirement Document", {
         if (frm.doc.workflow_state === "Rejected" && user_roles.includes('Procurement Officer') ) {
             frm.add_custom_button("Use as Template", function() {
                 // Your logic to create bid form goes here
-                
                   frappe.new_doc("Requirement Document", {
                     // Replace 'requirement' with actual fieldname in Bid Form
                     name: frm.doc.name,

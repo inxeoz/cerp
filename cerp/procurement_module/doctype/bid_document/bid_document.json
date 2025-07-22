@@ -33,6 +33,10 @@
   {
    "fieldname": "bid_title",
    "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
    "label": "Bid Title"
   },
   {
@@ -75,7 +79,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-22 15:07:08.577626",
+ "modified": "2025-07-22 15:25:54.084189",
  "modified_by": "Administrator",
  "module": "Procurement Module",
  "name": "Bid Document",
