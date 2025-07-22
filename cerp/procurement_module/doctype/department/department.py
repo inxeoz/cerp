@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class BidCreationForm(Document):
+class Department(Document):
 	pass

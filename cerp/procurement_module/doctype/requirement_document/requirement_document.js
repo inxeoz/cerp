@@ -14,13 +14,21 @@
 // 	}
 // })
 
+
 frappe.ui.form.on("Requirement Document", {
     refresh(frm) {
-        if (frm.doc.workflow_state === "Approved by MD Sir") {
-            frm.add_custom_button("Create Bid Form", function() {
+
+        user =frappe.session.user
+
+        console.log(user)
+
+        user_roles = frappe.user_roles
+
+        if (frm.doc.workflow_state === "Approved by MD Sir" && user_roles.includes('Procurement Officer') ) {
+            frm.add_custom_button("Create Bid Document", function() {
                 // Your logic to create bid form goes here
                 
-                  frappe.new_doc("Bid Creation Form", {
+                  frappe.new_doc("Bid Document", {
                     // Replace 'requirement' with actual fieldname in Bid Form
                     requirements: frm.doc.name
                 });

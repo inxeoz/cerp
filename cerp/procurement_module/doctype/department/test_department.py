@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestBidCreationForm(FrappeTestCase):
+class TestDepartment(FrappeTestCase):
 	pass

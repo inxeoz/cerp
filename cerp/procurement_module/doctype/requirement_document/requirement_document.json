@@ -1,13 +1,17 @@
 {
  "actions": [],
- "allow_rename": 1,
+ "autoname": "RQ-.#####",
  "creation": "2025-07-21 21:56:29.349997",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "section_break_rxrs",
-  "amended_from",
-  "requirements"
+  "requirement_title",
+  "description__scope",
+  "department",
+  "estimated_budget",
+  "date_of_creation",
+  "amended_from"
  ],
  "fields": [
   {
@@ -25,19 +29,42 @@
    "search_index": 1
   },
   {
-   "fieldname": "requirements",
+   "fieldname": "requirement_title",
    "fieldtype": "Data",
-   "label": "Requirements"
+   "label": "Requirement Title"
+  },
+  {
+   "fieldname": "description__scope",
+   "fieldtype": "Data",
+   "label": "Description / Scope"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department"
+  },
+  {
+   "fieldname": "estimated_budget",
+   "fieldtype": "Currency",
+   "label": "Estimated Budget in Rupee"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date_of_creation",
+   "fieldtype": "Date",
+   "label": "Date Of Creation"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-21 23:19:13.031938",
+ "modified": "2025-07-22 12:28:14.511597",
  "modified_by": "Administrator",
  "module": "Procurement Module",
  "name": "Requirement Document",
+ "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
   {
@@ -68,16 +95,13 @@
    "write": 1
   },
   {
-   "create": 1,
-   "delete": 1,
    "email": 1,
    "export": 1,
    "print": 1,
    "read": 1,
    "report": 1,
    "role": "Managing Director",
-   "share": 1,
-   "write": 1
+   "share": 1
   }
  ],
  "row_format": "Dynamic",
