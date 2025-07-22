@@ -12,7 +12,7 @@
   "requirement_document_reference",
   "description__scope_of_work",
   "bid_type",
-  "submittion_start",
+  "submission_start",
   "submission_end",
   "committee_member"
  ],
@@ -61,11 +61,6 @@
    "options": "Open\nLimited"
   },
   {
-   "fieldname": "submittion_start",
-   "fieldtype": "Date",
-   "label": "Submittion Start"
-  },
-  {
    "fieldname": "submission_end",
    "fieldtype": "Date",
    "label": "Submission End"
@@ -85,13 +80,18 @@
    "in_standard_filter": 1,
    "label": "Bid Document Status",
    "read_only": 1
+  },
+  {
+   "fieldname": "submission_start",
+   "fieldtype": "Date",
+   "label": "Submittion Start"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-22 17:17:03.702156",
+ "modified": "2025-07-22 17:40:15.802640",
  "modified_by": "Administrator",
  "module": "Procurement Module",
  "name": "Bid Document",

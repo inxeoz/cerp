@@ -7,42 +7,42 @@
 // // 	},
 // // });
 
-// frappe.ui.form.on('Bid Document', {
-//     // refresh: function(frm) {
-//     //}
 
-//      validate: function(frm) {
 
-        
-//         let role_counts = {};
 
-//         // Iterate all rows in the child table 'committee_member_table'
-//         frm.doc.committee_member.forEach(row => {
-//             let role = row.role_in_committee;  // Use the exact fieldname (case-sensitive)
-//             if (role) {
-//                 // Count occurrences
-//                 if (role_counts[role]) {
-//                     role_counts[role] += 1;
-//                 } else {
-//                     role_counts[role] = 1;
-//                 }
-//             }
-//         });
+frappe.ui.form.on("Bid Document", {
+    refresh(frm) {
 
-        
-//           // If more than one Chairman, prevent saving
-//         if (role_counts["Chairman"] > 1) {
-//             frappe.throw("Chairman can't be selected more than once.");
-//         }
+        user =frappe.session.user
 
-//         // Show message if dictionary is not empty
-//         if (Object.keys(role_counts).length > 0) {
-//             let msg = JSON.stringify(role_counts, null, 2); // Pretty print JSON
-//             // frappe.msgprint({
-//             //     title: 'Role Counts in Committee',
-//             //     message: `<pre>${msg}</pre>`,
-//             //     indicator: 'green'
-//             // });
-//         }
-//     }
-// });
+        console.log(user)
+
+        user_roles = frappe.user_roles
+
+        if (frm.doc.workflow_state === "Rejected" && user_roles.includes('Procurement Officer') ) {
+            frm.add_custom_button("Use as Template", function() {
+                // Your logic to create bid form goes here
+
+                   let fields = [
+                    // "bid_document_status",
+                    "bid_title",
+                    "requirement_document_reference",
+                    "description__scope_of_work",
+                    "bid_type",
+                    "submission_start",
+                    "submission_end"
+                ];
+                 // Create a data object for new_doc fields
+                let field_data = {};
+                fields.forEach(field => {
+                    field_data[field] = frm.doc[field];
+                });
+
+                // Create the new document with these field values
+                frappe.new_doc("Bid Document", field_data);
+                
+            });
+        }
+
+    }
+});
