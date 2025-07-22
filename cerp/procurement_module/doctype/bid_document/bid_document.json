@@ -14,7 +14,8 @@
   "bid_type",
   "submission_start",
   "submission_end",
-  "committee_member"
+  "committee_member",
+  "attach_document"
  ],
  "fields": [
   {
@@ -72,6 +73,7 @@
    "options": "Committee Member Table"
   },
   {
+   "bold": 1,
    "fieldname": "bid_document_status",
    "fieldtype": "Data",
    "in_filter": 1,
@@ -85,13 +87,18 @@
    "fieldname": "submission_start",
    "fieldtype": "Date",
    "label": "Submittion Start"
+  },
+  {
+   "fieldname": "attach_document",
+   "fieldtype": "Attach",
+   "label": "Attach Document"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-22 17:40:15.802640",
+ "modified": "2025-07-22 22:33:20.448520",
  "modified_by": "Administrator",
  "module": "Procurement Module",
  "name": "Bid Document",

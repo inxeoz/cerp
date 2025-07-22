@@ -13,6 +13,7 @@
 frappe.ui.form.on("Bid Document", {
     refresh(frm) {
 
+
         user =frappe.session.user
 
         console.log(user)

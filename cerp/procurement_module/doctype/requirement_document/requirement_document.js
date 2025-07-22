@@ -26,6 +26,8 @@ frappe.ui.form.on("Requirement Document", {
 
         user_roles = frappe.user_roles
 
+       
+
         if (frm.doc.workflow_state === "Approved by MD Sir" && user_roles.includes('Procurement Officer') ) {
             frm.add_custom_button("Create Bid Document", function() {
                 // Your logic to create bid form goes here
@@ -59,3 +61,5 @@ frappe.ui.form.on("Requirement Document", {
 
     }
 });
+
+
