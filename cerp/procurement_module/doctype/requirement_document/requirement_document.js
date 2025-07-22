@@ -30,7 +30,10 @@ frappe.ui.form.on("Requirement Document", {
                 
                   frappe.new_doc("Bid Document", {
                     // Replace 'requirement' with actual fieldname in Bid Form
-                    requirements: frm.doc.name
+                    requirement_document_reference: frm.doc.name,
+                    bid_title: frm.doc.requirement_title,
+                    description__scope_of_work: frm.doc.description__scope
+
                 });
             });
         }

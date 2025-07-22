@@ -6,7 +6,14 @@
  "engine": "InnoDB",
  "field_order": [
   "section_break_7lof",
-  "amended_from"
+  "amended_from",
+  "bid_title",
+  "requirement_document_reference",
+  "description__scope_of_work",
+  "bid_type",
+  "submittion_start",
+  "submission_end",
+  "committee_member"
  ],
  "fields": [
   {
@@ -22,13 +29,51 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "fieldname": "bid_title",
+   "fieldtype": "Data",
+   "label": "Bid Title"
+  },
+  {
+   "fieldname": "requirement_document_reference",
+   "fieldtype": "Link",
+   "label": "Requirement Document Reference",
+   "options": "Requirement Document"
+  },
+  {
+   "fieldname": "description__scope_of_work",
+   "fieldtype": "Data",
+   "label": "Description / Scope of Work"
+  },
+  {
+   "fieldname": "bid_type",
+   "fieldtype": "Select",
+   "label": "Bid Type",
+   "options": "Open\nLimited"
+  },
+  {
+   "fieldname": "submittion_start",
+   "fieldtype": "Date",
+   "label": "Submittion Start"
+  },
+  {
+   "fieldname": "submission_end",
+   "fieldtype": "Date",
+   "label": "Submission End"
+  },
+  {
+   "fieldname": "committee_member",
+   "fieldtype": "Table",
+   "label": "Committee Member",
+   "options": "Committee Member Table"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-22 13:02:14.441890",
+ "modified": "2025-07-22 14:30:26.647951",
  "modified_by": "Administrator",
  "module": "Procurement Module",
  "name": "Bid Document",
