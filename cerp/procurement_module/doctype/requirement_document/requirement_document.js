@@ -37,5 +37,24 @@ frappe.ui.form.on("Requirement Document", {
                 });
             });
         }
+
+        if (frm.doc.workflow_state === "Rejected" && user_roles.includes('Procurement Officer') ) {
+            frm.add_custom_button("Use as Template", function() {
+                // Your logic to create bid form goes here
+                
+                  frappe.new_doc("Requirement Document", {
+                    // Replace 'requirement' with actual fieldname in Bid Form
+                    name: frm.doc.name,
+                    requirement_title: frm.doc.requirement_title,
+                    description__scope: frm.doc.description__scope,
+                    department: frm.doc.department,
+                    estimated_budget: frm.doc.estimated_budget,
+                    date_of_creation: frm.doc.date_of_creation
+
+                });
+            });
+        }
+
+
     }
 });
