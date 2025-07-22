@@ -6,6 +6,7 @@
  "engine": "InnoDB",
  "field_order": [
   "section_break_7lof",
+  "bid_document_status",
   "amended_from",
   "bid_title",
   "requirement_document_reference",
@@ -45,6 +46,7 @@
    "in_list_view": 1,
    "label": "Requirement Document Reference",
    "options": "Requirement Document",
+   "read_only": 1,
    "reqd": 1
   },
   {
@@ -73,13 +75,23 @@
    "fieldtype": "Table",
    "label": "Committee Member",
    "options": "Committee Member Table"
+  },
+  {
+   "fieldname": "bid_document_status",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Bid Document Status",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-22 15:25:54.084189",
+ "modified": "2025-07-22 17:17:03.702156",
  "modified_by": "Administrator",
  "module": "Procurement Module",
  "name": "Bid Document",
@@ -94,6 +106,7 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "select": 1,
    "share": 1,
    "submit": 1,
    "write": 1
@@ -110,6 +123,46 @@
    "select": 1,
    "share": 1,
    "submit": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Project Director",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Chief General Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Managing Director",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Marketing Team",
+   "share": 1,
    "write": 1
   }
  ],

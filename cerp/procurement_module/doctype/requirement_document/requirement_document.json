@@ -60,7 +60,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-22 12:28:14.511597",
+ "modified": "2025-07-22 17:17:20.395658",
  "modified_by": "Administrator",
  "module": "Procurement Module",
  "name": "Requirement Document",
@@ -76,6 +76,7 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "select": 1,
    "share": 1,
    "submit": 1,
    "write": 1
@@ -93,6 +94,24 @@
    "share": 1,
    "submit": 1,
    "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Project Director",
+   "share": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Chief General Manager",
+   "share": 1
   },
   {
    "email": 1,
