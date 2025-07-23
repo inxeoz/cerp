@@ -50,14 +50,8 @@
 
 frappe.ui.form.on("Bid Document", {
     refresh(frm) {
-        //action_option_to_upload_pending(frm)
-        //next_state(frm)
-        
-
+   
         user =frappe.session.user
-
-        console.log(user)
-
         user_roles = frappe.user_roles
 
         if (frm.doc.workflow_state === "Rejected" && user_roles.includes('Procurement Officer') ) {

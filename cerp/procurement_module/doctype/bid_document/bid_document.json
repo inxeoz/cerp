@@ -5,8 +5,11 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "section_break_7lof",
+  "status_section",
   "bid_document_status",
+  "requirements_section",
+  "requirement",
+  "section_break_7lof",
   "amended_from",
   "bid_title",
   "description__scope_of_work",
@@ -15,12 +18,19 @@
   "submission_end",
   "committee_member",
   "attach_document",
-  "bcc_upload_status"
+  "bcc_upload_status",
+  "tec_mom_section",
+  "nametec",
+  "fec_mom_section",
+  "namefec",
+  "vendors_query_section",
+  "name1"
  ],
  "fields": [
   {
    "fieldname": "section_break_7lof",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "label": "Main Bid Details"
   },
   {
    "fieldname": "amended_from",
@@ -89,13 +99,58 @@
    "fieldname": "bcc_upload_status",
    "fieldtype": "Check",
    "label": "Bcc Upload Status"
+  },
+  {
+   "fieldname": "status_section",
+   "fieldtype": "Section Break",
+   "label": "Status"
+  },
+  {
+   "fieldname": "vendors_query_section",
+   "fieldtype": "Section Break",
+   "label": "Vendors Query"
+  },
+  {
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "label": "Name"
+  },
+  {
+   "fieldname": "requirements_section",
+   "fieldtype": "Section Break",
+   "label": "Requirements"
+  },
+  {
+   "fieldname": "requirement",
+   "fieldtype": "Data",
+   "label": "Requirement"
+  },
+  {
+   "fieldname": "tec_mom_section",
+   "fieldtype": "Section Break",
+   "label": "TEC MOM"
+  },
+  {
+   "fieldname": "nametec",
+   "fieldtype": "Data",
+   "label": "Name"
+  },
+  {
+   "fieldname": "fec_mom_section",
+   "fieldtype": "Section Break",
+   "label": "FEC MOM"
+  },
+  {
+   "fieldname": "namefec",
+   "fieldtype": "Data",
+   "label": "Name"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-23 11:44:04.737013",
+ "modified": "2025-07-23 15:52:03.450570",
  "modified_by": "Administrator",
  "module": "Procurement Module",
  "name": "Bid Document",
