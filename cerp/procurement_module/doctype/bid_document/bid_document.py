@@ -3,6 +3,22 @@
 
 import frappe
 from frappe.model.document import Document
+import logging
+
+#To Hide Draft state Bid document for listing For Managing Director
+def permission_query_conditions(user):
+    if not user:
+        user = frappe.session.user
+
+    roles = frappe.get_roles(user)
+    # If user has role Managing Director, exclude docs with workflow_state = 'Draft'
+    if "Managing Director" in roles:
+        return "`tabBid Document`.workflow_state != 'Draft'"
+
+    # For other users, no restriction (or return empty string)
+    return ""
+
+
 
 class BidDocument(Document):
 
