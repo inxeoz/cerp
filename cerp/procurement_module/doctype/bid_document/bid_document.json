@@ -7,9 +7,11 @@
  "field_order": [
   "status_section",
   "bid_document_status",
+  "column_break_ozeh",
+  "bid_current_stage",
   "requirements_section",
   "requirement",
-  "section_break_7lof",
+  "main_bid_details",
   "amended_from",
   "bid_title",
   "description__scope_of_work",
@@ -32,11 +34,6 @@
   "jk"
  ],
  "fields": [
-  {
-   "fieldname": "section_break_7lof",
-   "fieldtype": "Section Break",
-   "label": "Main Bid Details"
-  },
   {
    "fieldname": "amended_from",
    "fieldtype": "Link",
@@ -174,13 +171,29 @@
    "fieldname": "responce",
    "fieldtype": "Data",
    "label": "Responce"
+  },
+  {
+   "fieldname": "main_bid_details",
+   "fieldtype": "Section Break",
+   "label": "Main Bid Details"
+  },
+  {
+   "fieldname": "bid_current_stage",
+   "fieldtype": "Select",
+   "label": "Bid Current Stage",
+   "options": "RQ\nBCM\nUBO\nTEC\nFEC",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_ozeh",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-23 16:05:24.985286",
+ "modified": "2025-07-23 17:35:09.858329",
  "modified_by": "Administrator",
  "module": "Procurement Module",
  "name": "Bid Document",

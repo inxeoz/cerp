@@ -47,12 +47,29 @@
 // }
 
 
+function hide_doc_sections(frm) {
+
+    stage = frm.doc.bid_current_stage;
+
+    if (stage === "RQ") {
+        frappe.msgprint("RQ")
+    }
+
+    // frm.set_df_property('main_bid_details', 'hidden', 1); // hide
+    // frm.set_df_property('requirements_section', 'hidden', 1); // hide
+
+
+}
 
 frappe.ui.form.on("Bid Document", {
     refresh(frm) {
    
         user =frappe.session.user
         user_roles = frappe.user_roles
+        hide_doc_sections(frm)
+
+        // want to hide some sections
+    
 
         if (frm.doc.workflow_state === "Rejected" && user_roles.includes('Procurement Officer') ) {
             frm.add_custom_button("Use as Template", function() {
@@ -80,3 +97,15 @@ frappe.ui.form.on("Bid Document", {
 
     }
 });
+
+
+// frappe.ui.form.on('Your Doctype', {
+//     refresh(frm) {
+//         // Example: hide if workflow_state == "Rejected"
+//         if (frm.doc.workflow_state == "Rejected") {
+//             frm.set_df_property('your_fieldname', 'hidden', 1); // hide
+//         } else {
+//             frm.set_df_property('your_fieldname', 'hidden', 0); // show
+//         }
+//     }
+// });
