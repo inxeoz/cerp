@@ -16,15 +16,20 @@
   "bid_type",
   "submission_start",
   "submission_end",
-  "committee_member",
   "attach_document",
   "bcc_upload_status",
+  "committee_section",
+  "committee_member",
   "tec_mom_section",
   "nametec",
   "fec_mom_section",
   "namefec",
   "vendors_query_section",
-  "name1"
+  "name1",
+  "vendors_response_section",
+  "responce",
+  "corrigendum_section",
+  "jk"
  ],
  "fields": [
   {
@@ -144,13 +149,38 @@
    "fieldname": "namefec",
    "fieldtype": "Data",
    "label": "Name"
+  },
+  {
+   "fieldname": "committee_section",
+   "fieldtype": "Section Break",
+   "label": "Committee"
+  },
+  {
+   "fieldname": "corrigendum_section",
+   "fieldtype": "Section Break",
+   "label": "Corrigendum"
+  },
+  {
+   "fieldname": "jk",
+   "fieldtype": "Data",
+   "label": "jk"
+  },
+  {
+   "fieldname": "vendors_response_section",
+   "fieldtype": "Section Break",
+   "label": "Vendors Response"
+  },
+  {
+   "fieldname": "responce",
+   "fieldtype": "Data",
+   "label": "Responce"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-23 15:52:03.450570",
+ "modified": "2025-07-23 16:05:24.985286",
  "modified_by": "Administrator",
  "module": "Procurement Module",
  "name": "Bid Document",
