@@ -8,11 +8,51 @@
 // // });
 
 
+// function action_option_to_upload_pending(frm) {
+//     user_roles = frappe.user_roles
+
+//     if (user_roles.includes('Managing Director')) {
+//         if (frm.doc.bcc_upload_status == 1) {
+
+//             // add a normal menu item
+//             page.add_action_item('Delete', () => delete_items())
+
+//         }
+//     }
+// }
+
+
+// function next_state(frm) {
+//    console.log('Doc Status:', frm.doc.workflow_state);
+//    console.log('Role[0]', frappe.user_roles[0])
+// }
+
+// function first_upper(text) {
+
+//     let str_arr = text.split(" ");
+//     console.log(str_arr)
+//     let upper_str = "";
+
+//     for (const str of str_arr) {
+//         if (str === str.toUpperCase()) {
+//             console.log(str)
+//             upper_str += " "+str;
+//         }else{
+//           break;
+//         }
+//     }
+
+//     return upper_str.trim();
+
+// }
+
 
 
 frappe.ui.form.on("Bid Document", {
     refresh(frm) {
-
+        //action_option_to_upload_pending(frm)
+        //next_state(frm)
+        
 
         user =frappe.session.user
 
@@ -27,7 +67,6 @@ frappe.ui.form.on("Bid Document", {
                    let fields = [
                     // "bid_document_status",
                     "bid_title",
-                    "requirement_document_reference",
                     "description__scope_of_work",
                     "bid_type",
                     "submission_start",

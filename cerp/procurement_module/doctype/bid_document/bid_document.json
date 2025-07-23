@@ -9,13 +9,13 @@
   "bid_document_status",
   "amended_from",
   "bid_title",
-  "requirement_document_reference",
   "description__scope_of_work",
   "bid_type",
   "submission_start",
   "submission_end",
   "committee_member",
-  "attach_document"
+  "attach_document",
+  "bcc_upload_status"
  ],
  "fields": [
   {
@@ -40,15 +40,6 @@
    "in_preview": 1,
    "in_standard_filter": 1,
    "label": "Bid Title"
-  },
-  {
-   "fieldname": "requirement_document_reference",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Requirement Document Reference",
-   "options": "Requirement Document",
-   "read_only": 1,
-   "reqd": 1
   },
   {
    "fieldname": "description__scope_of_work",
@@ -92,13 +83,19 @@
    "fieldname": "attach_document",
    "fieldtype": "Attach",
    "label": "Attach Document"
+  },
+  {
+   "default": "0",
+   "fieldname": "bcc_upload_status",
+   "fieldtype": "Check",
+   "label": "Bcc Upload Status"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-22 22:33:20.448520",
+ "modified": "2025-07-23 11:44:04.737013",
  "modified_by": "Administrator",
  "module": "Procurement Module",
  "name": "Bid Document",
