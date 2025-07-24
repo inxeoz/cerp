@@ -5,7 +5,7 @@ def create_html_block(name, html, css="", js=""):
     """Create HTML block using the correct field names"""
     
     try:
-        # Check if document exists
+        # Check if document exists with name
         if frappe.db.exists("Custom HTML Block", name):
             # Update existing
             doc = frappe.get_doc("Custom HTML Block", name)
