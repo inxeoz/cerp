@@ -160,119 +160,119 @@ def get_workflow_states_table():
     
     return workflow_states
 
-# def print_workflow_states_table():
-#     """Print workflow states as a formatted table"""
+def print_workflow_states_table():
+    """Print workflow states as a formatted table"""
     
-#     states = get_workflow_states_table()
+    states = get_workflow_states_table()
     
-#     # Print header
-#     print("\nAll possible Workflow States and roles of the workflow. Docstatus Options: 0 is 'Saved', 1 is 'Submitted' and 2 is 'Cancelled'\n")
-#     print(f"{'No.':<5} {'State':<35} {'Doc Status':<12} {'Update Field':<25} {'Update Value':<25} {'Only Allow Edit For':<25}")
-#     print("-" * 130)
+    # Print header
+    print("\nAll possible Workflow States and roles of the workflow. Docstatus Options: 0 is 'Saved', 1 is 'Submitted' and 2 is 'Cancelled'\n")
+    print(f"{'No.':<5} {'State':<35} {'Doc Status':<12} {'Update Field':<25} {'Update Value':<25} {'Only Allow Edit For':<25}")
+    print("-" * 130)
     
-#     # Print rows
-#     for state in states:
-#         print(f"{state['no']:<5} {state['state']:<35} {state['doc_status']:<12} {state['update_field']:<25} {state['update_value']:<25} {state['only_allow_edit_for']:<25}")
+    # Print rows
+    for state in states:
+        print(f"{state['no']:<5} {state['state']:<35} {state['doc_status']:<12} {state['update_field']:<25} {state['update_value']:<25} {state['only_allow_edit_for']:<25}")
 
-# def get_workflow_states_for_doctype(doctype="Bid Document"):
-#     """Get workflow states formatted for use in workflow creation"""
+def get_workflow_states_for_doctype(doctype="Bid Document"):
+    """Get workflow states formatted for use in workflow creation"""
     
-#     states = get_workflow_states_table()
-#     workflow_states = []
+    states = get_workflow_states_table()
+    workflow_states = []
     
-#     for state in states:
-#         workflow_state = {
-#             "state": state["state"],
-#             "doc_status": str(state["doc_status"]),
-#             "allow_edit": state["only_allow_edit_for"],
-#             "is_optional_state": 0
-#         }
+    for state in states:
+        workflow_state = {
+            "state": state["state"],
+            "doc_status": str(state["doc_status"]),
+            "allow_edit": state["only_allow_edit_for"],
+            "is_optional_state": 0
+        }
         
-#         # Add update field info if present
-#         if state["update_field"]:
-#             workflow_state["update_field"] = state["update_field"]
-#             workflow_state["update_value"] = state["update_value"]
+        # Add update field info if present
+        if state["update_field"]:
+            workflow_state["update_field"] = state["update_field"]
+            workflow_state["update_value"] = state["update_value"]
             
-#         workflow_states.append(workflow_state)
+        workflow_states.append(workflow_state)
     
-#     return workflow_states
+    return workflow_states
 
-# def create_workflow_states_from_table():
-#     """Create actual workflow states in the system from the table data"""
+def create_workflow_states_from_table():
+    """Create actual workflow states in the system from the table data"""
     
-#     states = get_workflow_states_table()
-#     created_states = []
+    states = get_workflow_states_table()
+    created_states = []
     
-#     print("Creating workflow states...")
+    print("Creating workflow states...")
     
-#     for state in states:
-#         state_name = state["state"]
+    for state in states:
+        state_name = state["state"]
         
-#         if not frappe.db.exists("Workflow State", state_name):
-#             # Determine style based on state name
-#             if "Rejected" in state_name:
-#                 style = "Danger"
-#             elif "Approved" in state_name or "Verified" in state_name:
-#                 style = "Success"
-#             elif "Submitted" in state_name or "Uploaded" in state_name:
-#                 style = "Warning"
-#             elif "Draft" in state_name:
-#                 style = "Primary"
-#             else:
-#                 style = "Info"
+        if not frappe.db.exists("Workflow State", state_name):
+            # Determine style based on state name
+            if "Rejected" in state_name:
+                style = "Danger"
+            elif "Approved" in state_name or "Verified" in state_name:
+                style = "Success"
+            elif "Submitted" in state_name or "Uploaded" in state_name:
+                style = "Warning"
+            elif "Draft" in state_name:
+                style = "Primary"
+            else:
+                style = "Info"
             
-#             workflow_state = frappe.get_doc({
-#                 "doctype": "Workflow State",
-#                 "workflow_state_name": state_name,
-#                 "style": style
-#             })
-#             workflow_state.insert(ignore_permissions=True)
-#             created_states.append(state_name)
-#             print(f"✓ Created state: {state_name}")
-#         else:
-#             print(f"→ State already exists: {state_name}")
+            workflow_state = frappe.get_doc({
+                "doctype": "Workflow State",
+                "workflow_state_name": state_name,
+                "style": style
+            })
+            workflow_state.insert(ignore_permissions=True)
+            created_states.append(state_name)
+            print(f"✓ Created state: {state_name}")
+        else:
+            print(f"→ State already exists: {state_name}")
     
-#     return created_states
+    return created_states
 
-# def create_roles_from_table():
-#     """Create roles mentioned in the workflow states table"""
+def create_roles_from_table():
+    """Create roles mentioned in the workflow states table"""
     
-#     states = get_workflow_states_table()
-#     roles = set()
+    states = get_workflow_states_table()
+    roles = set()
     
-#     # Extract unique roles
-#     for state in states:
-#         if state["only_allow_edit_for"]:
-#             roles.add(state["only_allow_edit_for"])
+    # Extract unique roles
+    for state in states:
+        if state["only_allow_edit_for"]:
+            roles.add(state["only_allow_edit_for"])
     
-#     # Create roles
-#     created_roles = []
-#     print("\nCreating roles...")
+    # Create roles
+    created_roles = []
+    print("\nCreating roles...")
     
-#     for role in roles:
-#         if not frappe.db.exists("Role", role):
-#             role_doc = frappe.get_doc({
-#                 "doctype": "Role",
-#                 "role_name": role,
-#                 "desk_access": 1
-#             })
-#             role_doc.insert(ignore_permissions=True)
-#             created_roles.append(role)
-#             print(f"✓ Created role: {role}")
-#         else:
-#             print(f"→ Role already exists: {role}")
+    for role in roles:
+        if not frappe.db.exists("Role", role):
+            role_doc = frappe.get_doc({
+                "doctype": "Role",
+                "role_name": role,
+                "desk_access": 1
+            })
+            role_doc.insert(ignore_permissions=True)
+            created_roles.append(role)
+            print(f"✓ Created role: {role}")
+        else:
+            print(f"→ Role already exists: {role}")
     
-#     return created_roles
+    return created_roles
 
-# # Example usage:
-# if __name__ == "__main__":
-#     # Get the data
-#     states = get_workflow_states_table()
-#     print(f"Total states: {len(states)}")
+# Example usage:
+if __name__ == "__main__":
+    # Get the data
+    states = get_workflow_states_table()
+    print(f"Total states: {len(states)}")
     
-#     # Print as table
-#     print_workflow_states_table()
+    # Print as table
+    print_workflow_states_table()
     
-#     # Create states and roles in the system
-#     # create_workflow_states_from_table()
-#     # create_roles_from_table()
+    # Create states and roles in the system
+    # create_workflow_states_from_table()
+    # create_roles_from_table()
