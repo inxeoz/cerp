@@ -1,3 +1,6 @@
+import frappe
+from typing import List, Dict, Any
+
 def create_workflow_transition(workflow_transitions_data: List[Dict[str, Any]] = None) -> Dict[str, Any]:
     """
     Create workflow transitions with flexible configuration

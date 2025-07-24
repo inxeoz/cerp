@@ -1,4 +1,5 @@
 import frappe
+from typing import List, Dict, Any
 
 def get_workflow_transitions_table():
     """Returns workflow transitions configuration as a list of dictionaries"""

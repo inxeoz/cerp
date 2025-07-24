@@ -1,4 +1,5 @@
 import frappe
+from typing import List, Dict, Any
 
 def get_merged_bid_workflow_states():
     """Returns merged workflow states configuration"""
@@ -28,7 +29,7 @@ def get_merged_bid_workflow_states():
             "update_value": "pending for MD Appro...",
             "only_allow_edit_for": "Managing Director",
             "style": "Warning",
-            "icon": "send",
+            "icon": "share",
             "is_optional_state": 0,
             "creation_date": "2024-01-01"
         },
@@ -56,7 +57,7 @@ def get_merged_bid_workflow_states():
             "update_value": "pending for PD Approv...",
             "only_allow_edit_for": "Project Director",
             "style": "Warning",
-            "icon": "send",
+            "icon": "share",
             "is_optional_state": 0,
             "creation_date": "2024-01-01"
         },
@@ -112,7 +113,7 @@ def get_merged_bid_workflow_states():
             "update_value": "pending for CGM appr...",
             "only_allow_edit_for": "Chief General Manager",
             "style": "Warning",
-            "icon": "send",
+            "icon": "share",
             "is_optional_state": 0,
             "creation_date": "2024-01-01"
         },

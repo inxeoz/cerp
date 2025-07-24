@@ -13,6 +13,9 @@ from cerp.procurement_module.setup.default_setup_methods.create_workflow_action_
 from cerp.procurement_module.setup.procurement_module_setup.bid_doc_workflow_states import get_merged_bid_workflow_states
 from cerp.procurement_module.setup.procurement_module_setup.bid_workflow_transition import get_workflow_transitions_table
 
+
+from cerp.procurement_module.setup.default_setup_methods.validate_icon import validate_workflow_icon
+
 def prepare_bid_document_workflow_data() -> Dict[str, Any]:
     """
     Prepare comprehensive workflow data for Bid Document

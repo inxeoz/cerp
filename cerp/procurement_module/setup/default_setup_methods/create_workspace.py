@@ -99,7 +99,7 @@ def create_workspace(
                     "public": workspace_data.get('public', 1),
                     "is_hidden": workspace_data.get('is_hidden', 0),
                     "is_default": workspace_data.get('is_default', 0),
-                    "icon": workspace_data.get('icon', 'view'),
+                    "icon": workspace_data.get('icon', 'music'),
                     "restrict_to_domain": workspace_data.get('restrict_to_domain', ''),
                     "content": workspace_data.get('content', '[]')
                 })
@@ -160,7 +160,7 @@ def _get_default_workspace_config() -> List[Dict[str, Any]]:
             "public": 1,
             "is_hidden": 0,
             "is_default": 1,
-            "icon": "view",
+            "icon": "music",
             "restrict_to_domain": "",
             "content": '''[
                 {
@@ -209,7 +209,7 @@ def workspace_setup_example():
             "title": "Project Management",
             "module": "Projects",
             "public": 1,
-            "icon": "project",
+            "icon": "music",
             "content": '''[
                 {
                     "type": "header",
@@ -227,7 +227,7 @@ def workspace_setup_example():
             "title": "Sales Insights",
             "module": "Selling",
             "public": 1,
-            "icon": "sales",
+            "icon": "music",
             "content": '''[
                 {
                     "type": "header",
