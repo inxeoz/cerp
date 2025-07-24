@@ -18,7 +18,8 @@ def create_simple_workspace():
         "title": "Simple Workspace",
         "module": "Desk",
         "public": 1,  # Make it public
-        "is_hidden": 0,  # Make sure it's not hidden
+        "is_hidden": 0,  # Make sure it's not hidden,
+        "is_default" : 1, # Make Default Workspace
         "icon": "view",  # Add an icon to make it more visible
         "restrict_to_domain": "",  # No domain restrictions
         "content": '''[
