@@ -17,7 +17,9 @@ def get_merged_bid_workflow_states():
             "style": "Primary",
             "icon": "file",
             "is_optional_state": 0,
-            "creation_date": "2024-01-01"
+            "creation_date": "2024-01-01",
+            "only_visible_to" : [ "Procurement Officer" ],
+            "only_hide_to" : [ ]
         },
         {
             "no": 2,
@@ -31,7 +33,10 @@ def get_merged_bid_workflow_states():
             "style": "Warning",
             "icon": "share",
             "is_optional_state": 0,
-            "creation_date": "2024-01-01"
+            "creation_date": "2024-01-01",
+            "only_visible_to" : [  ],
+            "only_hide_to" : [ ]
+
         },
         {
             "no": 3,
@@ -45,7 +50,9 @@ def get_merged_bid_workflow_states():
             "style": "Success",
             "icon": "check",
             "is_optional_state": 0,
-            "creation_date": "2024-01-01"
+            "creation_date": "2024-01-01",
+            "only_visible_to" : [  ],
+            "only_hide_to" : [ ]
         },
         {
             "no": 4,
@@ -59,7 +66,10 @@ def get_merged_bid_workflow_states():
             "style": "Warning",
             "icon": "share",
             "is_optional_state": 0,
-            "creation_date": "2024-01-01"
+            "creation_date": "2024-01-01",
+            "only_visible_to" : [  ],
+            "only_hide_to" : [ ]
+            
         },
         {
             "no": 5,
@@ -73,7 +83,9 @@ def get_merged_bid_workflow_states():
             "style": "Info",
             "icon": "user-check",
             "is_optional_state": 0,
-            "creation_date": "2024-01-01"
+            "creation_date": "2024-01-01",
+            "only_visible_to" : [  ],
+            "only_hide_to" : [ ]
         },
         {
             "no": 6,
@@ -87,7 +99,9 @@ def get_merged_bid_workflow_states():
             "style": "Info",
             "icon": "user-check",
             "is_optional_state": 0,
-            "creation_date": "2024-01-01"
+            "creation_date": "2024-01-01",
+            "only_visible_to" : [  ],
+            "only_hide_to" : [ ]
         },
         {
             "no": 7,
@@ -101,7 +115,9 @@ def get_merged_bid_workflow_states():
             "style": "Success",
             "icon": "crown",
             "is_optional_state": 0,
-            "creation_date": "2024-01-01"
+            "creation_date": "2024-01-01",
+            "only_visible_to" : [  ],
+            "only_hide_to" : [ ]
         },
         {
             "no": 8,
@@ -115,7 +131,9 @@ def get_merged_bid_workflow_states():
             "style": "Warning",
             "icon": "share",
             "is_optional_state": 0,
-            "creation_date": "2024-01-01"
+            "creation_date": "2024-01-01",
+            "only_visible_to" : [  ],
+            "only_hide_to" : [ ]
         },
         {
             "no": 9,
@@ -129,7 +147,9 @@ def get_merged_bid_workflow_states():
             "style": "Info",
             "icon": "user-check",
             "is_optional_state": 0,
-            "creation_date": "2024-01-01"
+            "creation_date": "2024-01-01",
+            "only_visible_to" : [  ],
+            "only_hide_to" : [ ]
         },
         {
             "no": 10,
@@ -143,7 +163,9 @@ def get_merged_bid_workflow_states():
             "style": "Success",
             "icon": "crown",
             "is_optional_state": 0,
-            "creation_date": "2024-01-01"
+            "creation_date": "2024-01-01",
+            "only_visible_to" : [  ],
+            "only_hide_to" : [ ]
         },
         {
             "no": 11,
@@ -157,7 +179,9 @@ def get_merged_bid_workflow_states():
             "style": "Success",
             "icon": "globe",
             "is_optional_state": 0,
-            "creation_date": "2024-01-01"
+            "creation_date": "2024-01-01",
+            "only_visible_to" : [  ],
+            "only_hide_to" : [ ]
         },
 
          
@@ -173,7 +197,9 @@ def get_merged_bid_workflow_states():
             "style": "Info",
             "icon": "question-circle",
             "is_optional_state": 1,
-            "creation_date": "2024-01-01"
+            "creation_date": "2024-01-01",
+            "only_visible_to" : [  ],
+            "only_hide_to" : [ ]
         },
         {
             "no": 13,
@@ -187,7 +213,9 @@ def get_merged_bid_workflow_states():
             "style": "Warning",
             "icon": "upload",
             "is_optional_state": 0,
-            "creation_date": "2024-01-01"
+            "creation_date": "2024-01-01",
+            "only_visible_to" : [  ],
+            "only_hide_to" : [ ]
         },
         {
             "no": 14,
@@ -201,7 +229,9 @@ def get_merged_bid_workflow_states():
             "style": "Info",
             "icon": "user-check",
             "is_optional_state": 0,
-            "creation_date": "2024-01-01"
+            "creation_date": "2024-01-01",
+            "only_visible_to" : [  ],
+            "only_hide_to" : [ ]
         },
         {
             "no": 15,
@@ -215,7 +245,9 @@ def get_merged_bid_workflow_states():
             "style": "Success",
             "icon": "crown",
             "is_optional_state": 0,
-            "creation_date": "2024-01-01"
+            "creation_date": "2024-01-01",
+            "only_visible_to" : [  ],
+            "only_hide_to" : [ ]
         },
         {
             "no": 16,
@@ -229,7 +261,9 @@ def get_merged_bid_workflow_states():
             "style": "Warning",
             "icon": "upload",
             "is_optional_state": 0,
-            "creation_date": "2024-01-01"
+            "creation_date": "2024-01-01",
+            "only_visible_to" : [  ],
+            "only_hide_to" : [ ]
         },
         {
             "no": 17,
@@ -243,7 +277,9 @@ def get_merged_bid_workflow_states():
             "style": "Info",
             "icon": "user-check",
             "is_optional_state": 0,
-            "creation_date": "2024-01-01"
+            "creation_date": "2024-01-01",
+            "only_visible_to" : [  ],
+            "only_hide_to" : [ ]
         },
         {
             "no": 18,
@@ -257,7 +293,9 @@ def get_merged_bid_workflow_states():
             "style": "Success",
             "icon": "crown",
             "is_optional_state": 0,
-            "creation_date": "2024-01-01"
+            "creation_date": "2024-01-01",
+            "only_visible_to" : [  ],
+            "only_hide_to" : [ ]
         },
         {
             "no": 19,
@@ -271,7 +309,9 @@ def get_merged_bid_workflow_states():
             "style": "Danger",
             "icon": "x-circle",
             "is_optional_state": 0,
-            "creation_date": "2024-01-01"
+            "creation_date": "2024-01-01",
+            "only_visible_to" : [  ],
+            "only_hide_to" : [ ]
         }
     ]
     
