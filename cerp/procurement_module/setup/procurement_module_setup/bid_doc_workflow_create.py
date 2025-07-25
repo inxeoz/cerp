@@ -48,7 +48,9 @@ def prepare_bid_document_workflow_data() -> Dict[str, Any]:
                 {
                     "state": state['workflow_state_name'],
                     "doc_status": state['doc_status'],
-                    "allow_edit": state['only_allow_edit_for']
+                    "allow_edit": state['only_allow_edit_for'],
+                    "update_value" : state['update_value'],
+                    "update_field" : state['update_field']
                 } for state in workflow_states
             ],
             "transitions": [

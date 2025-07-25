@@ -42,7 +42,14 @@ def create_workflow_state(workflow_states_data: List[Dict[str, Any]] = None) -> 
                         "icon": icon,  # Use validated icon
                         "doc_status": state_config.get('doc_status', 0),
                         "is_optional_state": state_config.get('is_optional_state', 0)
-                    }).insert(ignore_permissions=True)
+                    })
+                    if state_config.get('update_field'):
+                        new_state.update_field = state_config.get('update_field')
+                    
+                    if state_config.get('update_value'):
+                        new_state.update_value = state_config.get('update_value')
+
+                    new_state.insert(ignore_permissions=True)
                     
                     created_states.append(state_name)
                 else:
