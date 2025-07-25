@@ -110,42 +110,7 @@ def setup_bid_document_workflow():
     """
     return create_bid_document_workflow()
 
-# Optional: Role Profile Creation (if needed)
-def create_bid_document_role_profiles():
-    """
-    Create role profiles for Bid Document Workflow
-    """
-    try:
-        # Get workflow transitions
-        workflow_transitions = get_workflow_transitions_table()
-        
-        # Extract unique roles from workflow transitions
-        roles = list(set(transition['allowed'] for transition in workflow_transitions))
-        
-        # Prepare role profiles
-        role_profiles = [
-            {
-                "role_profile_name": f"{role} Workflow Profile",
-                "roles": [{"role": role}],
-                "description": f"Workflow profile for {role}"
-            }
-            for role in roles
-        ]
-        
-        # Create role profiles
-        role_profiles_result = create_role_profile(role_profiles)
-        
-        return {
-            "status": "success",
-            "role_profiles": role_profiles_result
-        }
-    
-    except Exception as e:
-        frappe.log_error(f"Bid Document Role Profiles Setup Error: {str(e)}")
-        return {
-            "status": "error", 
-            "message": str(e)
-        }
+
 
 # Comprehensive setup method
 @frappe.whitelist()
