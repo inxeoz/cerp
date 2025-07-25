@@ -47,26 +47,12 @@
 // }
 
 
-function hide_doc_sections(frm) {
-
-    stage = frm.doc.bid_current_stage;
-
-    if (stage === "RQ") {
-        frappe.msgprint("RQ")
-    }
-
-    // frm.set_df_property('main_bid_details', 'hidden', 1); // hide
-    // frm.set_df_property('requirements_section', 'hidden', 1); // hide
-
-
-}
 
 frappe.ui.form.on("Bid Document", {
     refresh(frm) {
    
         user =frappe.session.user
         user_roles = frappe.user_roles
-        hide_doc_sections(frm)
 
         // want to hide some sections
     

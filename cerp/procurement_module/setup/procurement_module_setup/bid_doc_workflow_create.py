@@ -14,8 +14,9 @@ from cerp.procurement_module.setup.procurement_module_setup.get_bid_doc_workflow
 from cerp.procurement_module.setup.procurement_module_setup.get_bid_workflow_transition import get_workflow_transitions_table
 
 from cerp.procurement_module.setup.procurement_module_setup.bid_doc_role_profile_create import create_bid_document_role_profiles
-
 from cerp.procurement_module.setup.default_setup_methods.validate_icon import validate_workflow_icon
+
+from cerp.procurement_module.setup.procurement_module_setup.bid_doc_user_create import create_bid_user
 
 def prepare_bid_document_workflow_data() -> Dict[str, Any]:
     """
@@ -127,11 +128,14 @@ def complete_bid_document_workflow_setup():
         
         # Setup role profiles
         role_profiles_setup = create_bid_document_role_profiles()
+
+        users_result = create_bid_user()
         
         return {
             "status": "success",
             "workflow_setup": workflow_setup,
-            "role_profiles_setup": role_profiles_setup
+            "role_profiles_setup": role_profiles_setup,
+            "user setup" : users_result
         }
     
     except Exception as e:

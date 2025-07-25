@@ -7,6 +7,8 @@ import logging
 
 #To Hide Draft state Bid document for listing For Managing Director
 def permission_query_conditions(user):
+
+    return ""
     if not user:
         user = frappe.session.user
 
