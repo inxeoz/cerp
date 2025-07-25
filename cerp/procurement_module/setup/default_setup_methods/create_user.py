@@ -11,7 +11,8 @@ def create_user(user_data: Union[Dict[str, Any], List[Dict[str, Any]]] = None) -
     single_user = {
         "user_first_name": "Ravi",                         # Required 
         "user_email": "inxeoz@inxeoz.com",                # Required
-        "role_profile_name": "Procurement Officer Profile"  # Role Profile not Role
+        "role_profile_name": "Procurement Officer Profile"  # Role Profile not Role,
+        "new_password" : "asd@123"
     }
     
     # Multiple user Configuration
@@ -19,12 +20,14 @@ def create_user(user_data: Union[Dict[str, Any], List[Dict[str, Any]]] = None) -
         {
             "user_first_name": "Ravi",                         # Required 
             "user_email": "inxeoz@inxeoz.com",                # Required
-            "role_profile_name": "Procurement Officer Profile"  # Role Profile not Role
+            "role_profile_name": "Procurement Officer Profile"  # Role Profile not Role,
+            "new_password" : "asd@123"
         },
         {
             "user_first_name": "Kishan",                       # Required 
             "user_email": "kishan@inxeoz.com",                # Required
-            "role_profile_name": "Procurement Officer Profile"  # Role Profile not Role
+            "role_profile_name": "Procurement Officer Profile"  # Role Profile not Role,
+            "new_password" : "asd@123"
         }
     ]
     
@@ -78,6 +81,10 @@ def create_user(user_data: Union[Dict[str, Any], List[Dict[str, Any]]] = None) -
                     
                     if user_config.get('user_mobile'):
                         new_user.mobile_no = user_config.get('user_mobile')
+
+                                        # Set additional fields if provided
+                    if user_config.get('new_password'):
+                        new_user.new_password = user_config.get('new_password')
                     
                     # Insert the user
                     new_user.insert(ignore_permissions=True)

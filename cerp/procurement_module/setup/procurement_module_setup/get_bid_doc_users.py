@@ -6,20 +6,34 @@ def get_bid_users():
     
     users = [
         {
-            "user_first_name": "Ravi",                         
-            "user_email": "inxeoz@inxeoz.com",                
-            "role_profile_name": "Procurement Officer Profile" 
+            "user_first_name": "Proc",                         
+            "user_email": "1@inxeoz.com",                
+            "role_profile_name": "Procurement Officer Profile" ,
+            "new_password" : "asd@123"
         },
         {
-            "user_first_name": "Kishan",                     
-            "user_email": "kishan@inxeoz.com",               
-            "role_profile_name": "Procurement Officer Profile" 
+            "user_first_name": "Dir",                     
+            "user_email": "2@inxeoz.com",               
+            "role_profile_name": "Project Director Profile" ,
+            "new_password" : "asd@123"
         },
-
-         {
-            "user_first_name": "Yadav",                     
-            "user_email": "yadav@inxeoz.com",               
-            "role_profile_name": "Procurement Officer Profile" 
+        {
+            "user_first_name": "Chief",                     
+            "user_email": "3@inxeoz.com",               
+            "role_profile_name": "Chief General Manager Profile" ,
+            "new_password" : "asd@123"
+        },
+        {
+            "user_first_name": "Man",                     
+            "user_email": "4@inxeoz.com",               
+            "role_profile_name": "Managing Director Profile" ,
+            "new_password" : "asd@123"
+        },
+        {
+            "user_first_name": "MKT",                     
+            "user_email": "5@inxeoz.com",               
+            "role_profile_name": "Marketing Team Profile" ,
+            "new_password" : "asd@123"
         }
     ]
     
