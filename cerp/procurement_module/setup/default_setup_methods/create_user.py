@@ -3,16 +3,19 @@ from typing import List, Dict, Union, Any
 
 def create_user(user_data: Union[Dict[str, Any], List[Dict[str, Any]]] = None) -> Dict[str, Any]:
     """
-    Create user with flexible configuration
+    Create user with flexible configuration including module access control
     
     Example Data Structures:
     
-    # Single user Configuration
+    # Single user Configuration with module access
     single_user = {
         "user_first_name": "Ravi",                         # Required 
         "user_email": "inxeoz@inxeoz.com",                # Required
-        "role_profile_name": "Procurement Officer Profile"  # Role Profile not Role,
-        "new_password" : "asd@123"
+        "role_profile_name": "Procurement Officer Profile", # Role Profile not Role
+        "new_password": "asd@123",
+        "allowed_modules": ["Buying", "Stock", "Accounts"], # Specify allowed modules
+        # OR use blocked_modules to block specific modules
+        # "blocked_modules": ["HR", "CRM", "Projects"]    # Modules to block
     }
     
     # Multiple user Configuration
@@ -20,14 +23,16 @@ def create_user(user_data: Union[Dict[str, Any], List[Dict[str, Any]]] = None) -
         {
             "user_first_name": "Ravi",                         # Required 
             "user_email": "inxeoz@inxeoz.com",                # Required
-            "role_profile_name": "Procurement Officer Profile"  # Role Profile not Role,
-            "new_password" : "asd@123"
+            "role_profile_name": "Procurement Officer Profile", # Role Profile not Role
+            "new_password": "asd@123",
+            "allowed_modules": ["Buying", "Stock"]             # Only allow these modules
         },
         {
             "user_first_name": "Kishan",                       # Required 
             "user_email": "kishan@inxeoz.com",                # Required
-            "role_profile_name": "Procurement Officer Profile"  # Role Profile not Role,
-            "new_password" : "asd@123"
+            "role_profile_name": "Sales User Profile",         # Role Profile not Role
+            "new_password": "asd@123",
+            "blocked_modules": ["HR", "Manufacturing"]         # Block these modules
         }
     ]
     
@@ -55,6 +60,8 @@ def create_user(user_data: Union[Dict[str, Any], List[Dict[str, Any]]] = None) -
             user_email = user_config.get('user_email')
             user_first_name = user_config.get('user_first_name')
             role_profile_name = user_config.get('role_profile_name')
+            allowed_modules = user_config.get('allowed_modules', [])
+            blocked_modules = user_config.get('blocked_modules', [])
             
             # Validate required fields
             if not user_email:
@@ -82,7 +89,6 @@ def create_user(user_data: Union[Dict[str, Any], List[Dict[str, Any]]] = None) -
                     if user_config.get('user_mobile'):
                         new_user.mobile_no = user_config.get('user_mobile')
 
-                                        # Set additional fields if provided
                     if user_config.get('new_password'):
                         new_user.new_password = user_config.get('new_password')
                     
@@ -98,6 +104,22 @@ def create_user(user_data: Union[Dict[str, Any], List[Dict[str, Any]]] = None) -
                         apply_role_profile_to_user(new_user.name, role_profile_name)
                     elif role_profile_name:
                         errors.append(f"Role Profile '{role_profile_name}' does not exist for user {user_email}")
+                    
+                    # Handle module access
+                    modules_to_block = []
+                    
+                    # If allowed_modules is specified, block all other modules
+                    if allowed_modules:
+                        all_modules = get_all_modules()
+                        modules_to_block = [m for m in all_modules if m not in allowed_modules]
+                    
+                    # If blocked_modules is specified, use those directly
+                    elif blocked_modules:
+                        modules_to_block = blocked_modules
+                    
+                    # Set blocked modules
+                    if modules_to_block:
+                        set_blocked_modules(new_user.name, modules_to_block)
                     
                     created_users.append(user_email)
                     
@@ -132,6 +154,50 @@ def create_user(user_data: Union[Dict[str, Any], List[Dict[str, Any]]] = None) -
             "existing_users": [],
             "errors": [str(e)]
         }
+
+
+def set_blocked_modules(user_email: str, modules_to_block: List[str]) -> None:
+    """
+    Set blocked modules for a user
+    
+    Args:
+        user_email: Email of the user
+        modules_to_block: List of module names to block
+    """
+    try:
+        user_doc = frappe.get_doc("User", user_email)
+        
+        # Clear existing blocked modules
+        user_doc.block_modules = []
+        
+        # Add new blocked modules
+        for module in modules_to_block:
+            user_doc.append("block_modules", {
+                "module": module
+            })
+        
+        user_doc.save(ignore_permissions=True)
+        
+    except Exception as e:
+        frappe.log_error(f"Error setting blocked modules for {user_email}: {str(e)}", 
+                        "Module Access Error")
+        raise
+
+
+def get_all_modules() -> List[str]:
+    """
+    Get list of all available modules in the system
+    
+    Returns:
+        List of module names
+    """
+    # Get all modules from Module Def doctype
+    modules = frappe.get_all("Module Def", 
+                            filters={"custom": 0},  # Only standard modules
+                            fields=["module_name"],
+                            order_by="module_name")
+    
+    return [m.module_name for m in modules]
 
 
 def apply_role_profile_to_user(user_email: str, role_profile_name: str) -> bool:
