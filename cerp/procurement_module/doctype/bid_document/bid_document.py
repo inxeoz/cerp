@@ -5,20 +5,36 @@ import frappe
 from frappe.model.document import Document
 import logging
 
+from cerp.procurement_module.setup.procurement_module_setup.get_bid_doc_workflow_states import get_merged_bid_workflow_states
+
 #To Hide Draft state Bid document for listing For Managing Director
 def permission_query_conditions(user):
 
-    return ""
     if not user:
         user = frappe.session.user
 
+    
     roles = frappe.get_roles(user)
-    # If user has role Managing Director, exclude docs with workflow_state = 'Draft'
-    if "Managing Director" in roles:
-        return "`tabBid Document`.workflow_state != 'Draft'"
 
-    # For other users, no restriction (or return empty string)
-    return ""
+    states = get_merged_bid_workflow_states()
+
+    not_show_states = []
+
+    for state in states :
+        only_visible_to = state["only_visible_to"]
+        only_hide_to = state["only_hide_to"]
+
+        if len(only_visible_to) > 0:
+            if roles[0] not in only_visible_to:
+                not_show_states.append(state["state"])
+
+        if roles[0] in only_hide_to:
+            not_show_states.append(state["state"])
+
+    joined_list = f"('{ "','".join(not_show_states)}')"
+    #frappe.msgprint(f"{joined_list}")
+
+    return f"`tabBid Document`.workflow_state NOT IN {joined_list}"
 
 
 

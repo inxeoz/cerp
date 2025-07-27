@@ -35,7 +35,7 @@ def get_merged_bid_workflow_states():
             "is_optional_state": 0,
             "creation_date": "2024-01-01",
             "only_visible_to" : [  ],
-            "only_hide_to" : [ ]
+            "only_hide_to" : ["Procurement Officer" ]
 
         },
         {
@@ -52,7 +52,7 @@ def get_merged_bid_workflow_states():
             "is_optional_state": 0,
             "creation_date": "2024-01-01",
             "only_visible_to" : [  ],
-            "only_hide_to" : [ ]
+            "only_hide_to" : ["Procurement Officer" ]
         },
         {
             "no": 4,
@@ -67,7 +67,7 @@ def get_merged_bid_workflow_states():
             "icon": "share",
             "is_optional_state": 0,
             "creation_date": "2024-01-01",
-            "only_visible_to" : [  ],
+            "only_visible_to" : [ "Project Director" ],
             "only_hide_to" : [ ]
             
         },
