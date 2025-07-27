@@ -1,7 +1,8 @@
 import frappe
 from typing import List, Dict, Any
 
-def get_merged_bid_workflow_states():
+
+def get_merged_bid_workflow_states() -> List[Dict[str, Any]]:
     """Returns merged workflow states configuration"""
     
     workflow_states = [
@@ -18,13 +19,13 @@ def get_merged_bid_workflow_states():
             "icon": "file",
             "is_optional_state": 0,
             "creation_date": "2024-01-01",
-            "only_visible_to" : [ "Procurement Officer" ],
-            "only_hide_to" : [ ]
+            "only_visible_to": ["Procurement Officer"],
+            "only_hide_to": []
         },
         {
             "no": 2,
             "id": "RQ Submitted For Approval",
-            "state": "RQ Submitted For Approval", 
+            "state": "RQ Submitted For Approval",
             "workflow_state_name": "RQ Submitted For Approval",
             "doc_status": 0,
             "update_field": "bid_document_status",
@@ -34,9 +35,8 @@ def get_merged_bid_workflow_states():
             "icon": "share",
             "is_optional_state": 0,
             "creation_date": "2024-01-01",
-            "only_visible_to" : [  ],
-            "only_hide_to" : ["Procurement Officer" ]
-
+            "only_visible_to": ["Procurement Officer", "Managing Director"],
+            "only_hide_to": []
         },
         {
             "no": 3,
@@ -51,8 +51,8 @@ def get_merged_bid_workflow_states():
             "icon": "check",
             "is_optional_state": 0,
             "creation_date": "2024-01-01",
-            "only_visible_to" : [  ],
-            "only_hide_to" : ["Procurement Officer" ]
+            "only_visible_to": ["Procurement Officer", "Managing Director"],
+            "only_hide_to": []
         },
         {
             "no": 4,
@@ -67,9 +67,8 @@ def get_merged_bid_workflow_states():
             "icon": "share",
             "is_optional_state": 0,
             "creation_date": "2024-01-01",
-            "only_visible_to" : [ "Project Director" ],
-            "only_hide_to" : [ ]
-            
+            "only_visible_to": ["Procurement Officer", "Project Director"],
+            "only_hide_to": []
         },
         {
             "no": 5,
@@ -84,8 +83,8 @@ def get_merged_bid_workflow_states():
             "icon": "user-check",
             "is_optional_state": 0,
             "creation_date": "2024-01-01",
-            "only_visible_to" : [  ],
-            "only_hide_to" : [ ]
+            "only_visible_to": ["Procurement Officer", "Project Director", "Chief General Manager"],
+            "only_hide_to": []
         },
         {
             "no": 6,
@@ -100,8 +99,8 @@ def get_merged_bid_workflow_states():
             "icon": "user-check",
             "is_optional_state": 0,
             "creation_date": "2024-01-01",
-            "only_visible_to" : [  ],
-            "only_hide_to" : [ ]
+            "only_visible_to": ["Procurement Officer", "Chief General Manager", "Managing Director"],
+            "only_hide_to": []
         },
         {
             "no": 7,
@@ -116,8 +115,8 @@ def get_merged_bid_workflow_states():
             "icon": "crown",
             "is_optional_state": 0,
             "creation_date": "2024-01-01",
-            "only_visible_to" : [  ],
-            "only_hide_to" : [ ]
+            "only_visible_to": ["Procurement Officer", "Managing Director"],
+            "only_hide_to": []
         },
         {
             "no": 8,
@@ -132,8 +131,8 @@ def get_merged_bid_workflow_states():
             "icon": "share",
             "is_optional_state": 0,
             "creation_date": "2024-01-01",
-            "only_visible_to" : [  ],
-            "only_hide_to" : [ ]
+            "only_visible_to": ["Procurement Officer", "Chief General Manager"],
+            "only_hide_to": []
         },
         {
             "no": 9,
@@ -148,8 +147,8 @@ def get_merged_bid_workflow_states():
             "icon": "user-check",
             "is_optional_state": 0,
             "creation_date": "2024-01-01",
-            "only_visible_to" : [  ],
-            "only_hide_to" : [ ]
+            "only_visible_to": ["Procurement Officer", "Chief General Manager", "Managing Director"],
+            "only_hide_to": []
         },
         {
             "no": 10,
@@ -164,8 +163,8 @@ def get_merged_bid_workflow_states():
             "icon": "crown",
             "is_optional_state": 0,
             "creation_date": "2024-01-01",
-            "only_visible_to" : [  ],
-            "only_hide_to" : [ ]
+            "only_visible_to": ["Procurement Officer", "Managing Director", "Marketing Team"],
+            "only_hide_to": []
         },
         {
             "no": 11,
@@ -180,11 +179,9 @@ def get_merged_bid_workflow_states():
             "icon": "globe",
             "is_optional_state": 0,
             "creation_date": "2024-01-01",
-            "only_visible_to" : [  ],
-            "only_hide_to" : [ ]
+            "only_visible_to": [],
+            "only_hide_to": []
         },
-
-         
         {
             "no": 12,
             "id": "No Vendors Query",
@@ -198,14 +195,14 @@ def get_merged_bid_workflow_states():
             "icon": "question-circle",
             "is_optional_state": 1,
             "creation_date": "2024-01-01",
-            "only_visible_to" : [  ],
-            "only_hide_to" : [ ]
+            "only_visible_to": ["Procurement Officer", "Managing Director", "Marketing Team"],
+            "only_hide_to": []
         },
         {
             "no": 13,
-            "id": "TEC MOM Uploaded",
-            "state": "TEC MOM Uploaded",
-            "workflow_state_name": "TEC MOM Uploaded",
+            "id": "TECMOM Uploaded",
+            "state": "TECMOM Uploaded",
+            "workflow_state_name": "TECMOM Uploaded",
             "doc_status": 0,
             "update_field": "bid_document_status",
             "update_value": "pending for CGM Approval",
@@ -214,14 +211,14 @@ def get_merged_bid_workflow_states():
             "icon": "upload",
             "is_optional_state": 0,
             "creation_date": "2024-01-01",
-            "only_visible_to" : [  ],
-            "only_hide_to" : [ ]
+            "only_visible_to": ["Procurement Officer", "Chief General Manager"],
+            "only_hide_to": []
         },
         {
             "no": 14,
-            "id": "TEC MOM Verified By CGM",
-            "state": "TEC MOM Verified By CGM",
-            "workflow_state_name": "TEC MOM Verified By CGM",
+            "id": "TECMOM Verified By CGM",
+            "state": "TECMOM Verified By CGM",
+            "workflow_state_name": "TECMOM Verified By CGM",
             "doc_status": 0,
             "update_field": "bid_document_status",
             "update_value": "pending for MD Approval",
@@ -230,30 +227,30 @@ def get_merged_bid_workflow_states():
             "icon": "user-check",
             "is_optional_state": 0,
             "creation_date": "2024-01-01",
-            "only_visible_to" : [  ],
-            "only_hide_to" : [ ]
+            "only_visible_to": ["Procurement Officer", "Chief General Manager", "Managing Director"],
+            "only_hide_to": []
         },
         {
             "no": 15,
-            "id": "TEC MOM Verified By MD",
-            "state": "TEC MOM Verified By MD",
-            "workflow_state_name": "TEC MOM Verified By MD",
+            "id": "TECMOM Verified By MD",
+            "state": "TECMOM Verified By MD",
+            "workflow_state_name": "TECMOM Verified By MD",
             "doc_status": 0,
             "update_field": "bid_document_status",
-            "update_value": "pending to upload FEC MOM",
+            "update_value": "pending to upload FECMOM",
             "only_allow_edit_for": "Procurement Officer",
             "style": "Success",
             "icon": "crown",
             "is_optional_state": 0,
             "creation_date": "2024-01-01",
-            "only_visible_to" : [  ],
-            "only_hide_to" : [ ]
+            "only_visible_to": ["Procurement Officer", "Managing Director"],
+            "only_hide_to": []
         },
         {
             "no": 16,
-            "id": "FEC MOM Uploaded",
-            "state": "FEC MOM Uploaded",
-            "workflow_state_name": "FEC MOM Uploaded",
+            "id": "FECMOM Uploaded",
+            "state": "FECMOM Uploaded",
+            "workflow_state_name": "FECMOM Uploaded",
             "doc_status": 0,
             "update_field": "bid_document_status",
             "update_value": "pending for CGM Approval",
@@ -262,14 +259,14 @@ def get_merged_bid_workflow_states():
             "icon": "upload",
             "is_optional_state": 0,
             "creation_date": "2024-01-01",
-            "only_visible_to" : [  ],
-            "only_hide_to" : [ ]
+            "only_visible_to": ["Procurement Officer", "Managing Director"],
+            "only_hide_to": []
         },
         {
             "no": 17,
-            "id": "FEC MOM Verified By CGM",
-            "state": "FEC MOM Verified By CGM",
-            "workflow_state_name": "FEC MOM Verified By CGM",
+            "id": "FECMOM Verified By CGM",
+            "state": "FECMOM Verified By CGM",
+            "workflow_state_name": "FECMOM Verified By CGM",
             "doc_status": 0,
             "update_field": "bid_document_status",
             "update_value": "pending for MD Approval",
@@ -278,14 +275,14 @@ def get_merged_bid_workflow_states():
             "icon": "user-check",
             "is_optional_state": 0,
             "creation_date": "2024-01-01",
-            "only_visible_to" : [  ],
-            "only_hide_to" : [ ]
+            "only_visible_to": ["Procurement Officer", "Chief General Manager", "Managing Director"],
+            "only_hide_to": []
         },
         {
             "no": 18,
-            "id": "FEC MOM Verified By MD",
-            "state": "FEC MOM Verified By MD",
-            "workflow_state_name": "FEC MOM Verified By MD",
+            "id": "FECMOM Verified By MD",
+            "state": "FECMOM Verified By MD",
+            "workflow_state_name": "FECMOM Verified By MD",
             "doc_status": 0,
             "update_field": "bid_document_status",
             "update_value": "Approved",
@@ -294,8 +291,8 @@ def get_merged_bid_workflow_states():
             "icon": "crown",
             "is_optional_state": 0,
             "creation_date": "2024-01-01",
-            "only_visible_to" : [  ],
-            "only_hide_to" : [ ]
+            "only_visible_to": ["Procurement Officer", "Managing Director", "Marketing Team"],
+            "only_hide_to": []
         },
         {
             "no": 19,
@@ -310,8 +307,168 @@ def get_merged_bid_workflow_states():
             "icon": "x-circle",
             "is_optional_state": 0,
             "creation_date": "2024-01-01",
-            "only_visible_to" : [  ],
-            "only_hide_to" : [ ]
+            "only_visible_to": [],
+            "only_hide_to": []
+        },
+        {
+            "no": 20,
+            "id": "RQ Rejected By MD",
+            "state": "RQ Rejected By MD",
+            "workflow_state_name": "RQ Rejected By MD",
+            "doc_status": 0,
+            "update_field": "bid_document_status",
+            "update_value": "RQ Rejected By MD",
+            "only_allow_edit_for": "Procurement Officer",
+            "style": "Danger",
+            "icon": "x-circle",
+            "is_optional_state": 0,
+            "creation_date": "2024-01-01",
+            "only_visible_to": [],
+            "only_hide_to": []
+        },
+        {
+            "no": 21,
+            "id": "BCCM Rejected By PD",
+            "state": "BCCM Rejected By PD",
+            "workflow_state_name": "BCCM Rejected By PD",
+            "doc_status": 0,
+            "update_field": "bid_document_status",
+            "update_value": "BCCM Rejected By PD",
+            "only_allow_edit_for": "Procurement Officer",
+            "style": "Danger",
+            "icon": "x-circle",
+            "is_optional_state": 0,
+            "creation_date": "2024-01-01",
+            "only_visible_to": [],
+            "only_hide_to": []
+        },
+        {
+            "no": 22,
+            "id": "BCCM Rejected By CGM",
+            "state": "BCCM Rejected By CGM",
+            "workflow_state_name": "BCCM Rejected By CGM",
+            "doc_status": 0,
+            "update_field": "bid_document_status",
+            "update_value": "BCCM Rejected By CGM",
+            "only_allow_edit_for": "Procurement Officer",
+            "style": "Danger",
+            "icon": "x-circle",
+            "is_optional_state": 0,
+            "creation_date": "2024-01-01",
+            "only_visible_to": [],
+            "only_hide_to": []
+        },
+        {
+            "no": 23,
+            "id": "BCCM Rejected By MD",
+            "state": "BCCM Rejected By MD",
+            "workflow_state_name": "BCCM Rejected By MD",
+            "doc_status": 0,
+            "update_field": "bid_document_status",
+            "update_value": "BCCM Rejected By MD",
+            "only_allow_edit_for": "Procurement Officer",
+            "style": "Danger",
+            "icon": "x-circle",
+            "is_optional_state": 0,
+            "creation_date": "2024-01-01",
+            "only_visible_to": [],
+            "only_hide_to": []
+        },
+        {
+            "no": 24,
+            "id": "UBO Rejected By CGM",
+            "state": "UBO Rejected By CGM",
+            "workflow_state_name": "UBO Rejected By CGM",
+            "doc_status": 0,
+            "update_field": "bid_document_status",
+            "update_value": "UBO Rejected By CGM",
+            "only_allow_edit_for": "Procurement Officer",
+            "style": "Danger",
+            "icon": "x-circle",
+            "is_optional_state": 0,
+            "creation_date": "2024-01-01",
+            "only_visible_to": [],
+            "only_hide_to": []
+        },
+        {
+            "no": 25,
+            "id": "UBO Rejected By MD",
+            "state": "UBO Rejected By MD",
+            "workflow_state_name": "UBO Rejected By MD",
+            "doc_status": 0,
+            "update_field": "bid_document_status",
+            "update_value": "UBO Rejected By MD",
+            "only_allow_edit_for": "Procurement Officer",
+            "style": "Danger",
+            "icon": "x-circle",
+            "is_optional_state": 0,
+            "creation_date": "2024-01-01",
+            "only_visible_to": [],
+            "only_hide_to": []
+        },
+        {
+            "no": 26,
+            "id": "TECMOM Rejected By CGM",
+            "state": "TECMOM Rejected By CGM",
+            "workflow_state_name": "TECMOM Rejected By CGM",
+            "doc_status": 0,
+            "update_field": "bid_document_status",
+            "update_value": "TECMOM Rejected By CGM",
+            "only_allow_edit_for": "Procurement Officer",
+            "style": "Danger",
+            "icon": "x-circle",
+            "is_optional_state": 0,
+            "creation_date": "2024-01-01",
+            "only_visible_to": [],
+            "only_hide_to": []
+        },
+        {
+            "no": 27,
+            "id": "TECMOM Rejected By MD",
+            "state": "TECMOM Rejected By MD",
+            "workflow_state_name": "TECMOM Rejected By MD",
+            "doc_status": 0,
+            "update_field": "bid_document_status",
+            "update_value": "TECMOM Rejected By MD",
+            "only_allow_edit_for": "Procurement Officer",
+            "style": "Danger",
+            "icon": "x-circle",
+            "is_optional_state": 0,
+            "creation_date": "2024-01-01",
+            "only_visible_to": [],
+            "only_hide_to": []
+        },
+        {
+            "no": 28,
+            "id": "FECMOM Rejected By CGM",
+            "state": "FECMOM Rejected By CGM",
+            "workflow_state_name": "FECMOM Rejected By CGM",
+            "doc_status": 0,
+            "update_field": "bid_document_status",
+            "update_value": "FECMOM Rejected By CGM",
+            "only_allow_edit_for": "Procurement Officer",
+            "style": "Danger",
+            "icon": "x-circle",
+            "is_optional_state": 0,
+            "creation_date": "2024-01-01",
+            "only_visible_to": [],
+            "only_hide_to": []
+        },
+        {
+            "no": 29,
+            "id": "FECMOM Rejected By MD",
+            "state": "FECMOM Rejected By MD",
+            "workflow_state_name": "FECMOM Rejected By MD",
+            "doc_status": 0,
+            "update_field": "bid_document_status",
+            "update_value": "FECMOM Rejected By MD",
+            "only_allow_edit_for": "Procurement Officer",
+            "style": "Danger",
+            "icon": "x-circle",
+            "is_optional_state": 0,
+            "creation_date": "2024-01-01",
+            "only_visible_to": [],
+            "only_hide_to": []
         }
     ]
     
