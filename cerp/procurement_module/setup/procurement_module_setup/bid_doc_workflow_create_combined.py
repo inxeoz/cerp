@@ -24,7 +24,7 @@ def create_bid_doc_workflow_combined():
     """
     try:
         # Create roles
-        roles_result = create_bid_roles()
+        #roles_result = create_bid_roles() # roles will be added through document 
         
         # Create workflow actions
         actions_result = create_bid_doc_workflow_actions()

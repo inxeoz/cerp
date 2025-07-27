@@ -6,7 +6,7 @@ from typing import List, Dict, Any
 from cerp.procurement_module.setup.default_setup_methods.create_role_profile import create_role_profile
 
 
-from cerp.procurement_module.setup.procurement_module_setup.get_bid_doc_workflow_states import get_merged_bid_workflow_states
+from cerp.procurement_module.setup.procurement_module_setup.get_bid_roles import get_bid_roles
 
 from cerp.procurement_module.setup.default_setup_methods.validate_icon import validate_workflow_icon
 
@@ -15,20 +15,18 @@ def create_bid_doc_role_profiles():
     Create role profiles for Bid Document Workflow
     """
     try:
-        # Get workflow transitions
-        workflow_states = get_merged_bid_workflow_states()
         
         # Extract unique roles from workflow transitions
-        roles = list(set(state['only_allow_edit_for'] for state in workflow_states))
+        profiles = list(set(profile['role_name'] for profile in get_bid_roles()))
         
         # Prepare role profiles
         role_profiles = [
             {
-                "role_profile": f"{role} Profile",
-                "roles": [{"role": role}],
-                "description": f"Workflow profile for {role}"
+                "role_profile": f"{profile} Profile",
+                "roles": [{"role": profile}],
+                "description": f"Workflow profile for {profile}"
             }
-            for role in roles
+            for profile in profiles
         ]
         
         # Create role profiles
