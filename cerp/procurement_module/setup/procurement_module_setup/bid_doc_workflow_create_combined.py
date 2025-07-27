@@ -15,6 +15,10 @@ from cerp.procurement_module.setup.procurement_module_setup.bid_doc_role_profile
 from cerp.procurement_module.setup.procurement_module_setup.bid_doc_user_create import create_bid_user
 
 
+from cerp.procurement_module.setup.procurement_module_setup.bid_doc_workspace_create import create_bid_workspace
+
+from cerp.procurement_module.setup.procurement_module_setup.bid_doc_html_create import create_bid_name_email_html_block
+
 
 def create_bid_doc_workflow_combined():
     """
@@ -42,6 +46,10 @@ def create_bid_doc_workflow_combined():
         role_profiles_setup = create_bid_doc_role_profiles() # done
 
         users_result = create_bid_user() # done
+
+        workspace_result = create_bid_workspace() #done
+
+        custom_html_block_result = create_bid_name_email_html_block() #done
         
         return {
             "status": "success",
