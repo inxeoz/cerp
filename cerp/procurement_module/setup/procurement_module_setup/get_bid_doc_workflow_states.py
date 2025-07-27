@@ -352,6 +352,33 @@ def get_merged_bid_workflow_states() -> List[Dict[str, Any]]:
             "only_allow_edit_for": "Procurement Officer",
             "only_visible_to": [],
             "only_hide_to": []
+        },
+
+         {
+            "workflow_state_name": "FECMOM Submitted For Approval",
+            "style": "Danger",
+            "icon": "x-circle",
+            "doc_status": 0,
+            "is_optional_state": 0,
+            "update_field": "bid_document_status",
+            "update_value": "FECMOM Submitted For Approval",
+            "only_allow_edit_for": "Procurement Officer",
+            "only_visible_to": [],
+            "only_hide_to": []
+        },
+
+
+           {
+            "workflow_state_name": "TECMOM Submitted For Approval",
+            "style": "Danger",
+            "icon": "x-circle",
+            "doc_status": 0,
+            "is_optional_state": 0,
+            "update_field": "bid_document_status",
+            "update_value": "TECMOM Submitted For Approval",
+            "only_allow_edit_for": "Procurement Officer",
+            "only_visible_to": [],
+            "only_hide_to": []
         }
     ]
     

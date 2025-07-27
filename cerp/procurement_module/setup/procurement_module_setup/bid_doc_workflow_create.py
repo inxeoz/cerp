@@ -19,7 +19,7 @@ def create_bid_workflow() -> Dict[str, Any]:
         # Prepare workflow states
         workflow_states = get_merged_bid_workflow_states()
 
-        Workflow= [{
+        Workflow= {
                 "workflow_name": "Bid Document Workflow",
                 "document_type": "Bid Document",
                 "is_active": 1,
@@ -41,10 +41,10 @@ def create_bid_workflow() -> Dict[str, Any]:
                         "allowed": transition['allowed']
                     } for transition in workflow_transitions
                 ]
-            }]
+            }
 
         # Create workflow
-        workflow_result = create_workflow(workflow_data['Workflow'][0])
+        workflow_result = create_workflow(Workflow)
         
         return {
             "workflow": workflow_result
