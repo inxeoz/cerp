@@ -10,7 +10,7 @@ from cerp.procurement_module.setup.procurement_module_setup.get_bid_doc_workflow
 
 from cerp.procurement_module.setup.default_setup_methods.validate_icon import validate_workflow_icon
 
-def create_bid_document_role_profiles():
+def create_bid_doc_role_profiles():
     """
     Create role profiles for Bid Document Workflow
     """
