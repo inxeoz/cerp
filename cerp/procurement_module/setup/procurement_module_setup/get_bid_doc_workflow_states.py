@@ -13,6 +13,7 @@ def get_merged_bid_workflow_states() -> List[Dict[str, Any]]:
             "is_optional_state": 0,
             "update_field": "bid_document_status",
             "update_value": "draft",
+            "only_allow_edit_for": "Procurement Officer",
             "only_visible_to": ["Procurement Officer"],
             "only_hide_to": []
         },
@@ -24,6 +25,7 @@ def get_merged_bid_workflow_states() -> List[Dict[str, Any]]:
             "is_optional_state": 0,
             "update_field": "bid_document_status",
             "update_value": "pending for MD Approval",
+            "only_allow_edit_for": "Managing Director",
             "only_visible_to": ["Procurement Officer", "Managing Director"],
             "only_hide_to": []
         },
@@ -35,6 +37,7 @@ def get_merged_bid_workflow_states() -> List[Dict[str, Any]]:
             "is_optional_state": 0,
             "update_field": "bid_document_status",
             "update_value": "pending to creation of BCCM",
+            "only_allow_edit_for": "Procurement Officer",
             "only_visible_to": ["Procurement Officer", "Managing Director"],
             "only_hide_to": []
         },
@@ -46,6 +49,7 @@ def get_merged_bid_workflow_states() -> List[Dict[str, Any]]:
             "is_optional_state": 0,
             "update_field": "bid_document_status",
             "update_value": "pending for PD Approval",
+            "only_allow_edit_for": "Project Director",
             "only_visible_to": ["Procurement Officer", "Project Director"],
             "only_hide_to": []
         },
@@ -57,6 +61,7 @@ def get_merged_bid_workflow_states() -> List[Dict[str, Any]]:
             "is_optional_state": 0,
             "update_field": "bid_document_status",
             "update_value": "pending for CGM Approval",
+            "only_allow_edit_for": "Chief General Manager",
             "only_visible_to": ["Procurement Officer", "Project Director", "Chief General Manager"],
             "only_hide_to": []
         },
@@ -68,6 +73,7 @@ def get_merged_bid_workflow_states() -> List[Dict[str, Any]]:
             "is_optional_state": 0,
             "update_field": "bid_document_status",
             "update_value": "pending for MD Approval",
+            "only_allow_edit_for": "Managing Director",
             "only_visible_to": ["Procurement Officer", "Chief General Manager", "Managing Director"],
             "only_hide_to": []
         },
@@ -79,6 +85,7 @@ def get_merged_bid_workflow_states() -> List[Dict[str, Any]]:
             "is_optional_state": 0,
             "update_field": "bid_document_status",
             "update_value": "pending to upload BCC Offline",
+            "only_allow_edit_for": "Procurement Officer",
             "only_visible_to": ["Procurement Officer", "Managing Director"],
             "only_hide_to": []
         },
@@ -90,6 +97,7 @@ def get_merged_bid_workflow_states() -> List[Dict[str, Any]]:
             "is_optional_state": 0,
             "update_field": "bid_document_status",
             "update_value": "pending for CGM Approval",
+            "only_allow_edit_for": "Chief General Manager",
             "only_visible_to": ["Procurement Officer", "Chief General Manager"],
             "only_hide_to": []
         },
@@ -101,6 +109,7 @@ def get_merged_bid_workflow_states() -> List[Dict[str, Any]]:
             "is_optional_state": 0,
             "update_field": "bid_document_status",
             "update_value": "pending for MD Approval",
+            "only_allow_edit_for": "Managing Director",
             "only_visible_to": ["Procurement Officer", "Chief General Manager", "Managing Director"],
             "only_hide_to": []
         },
@@ -112,6 +121,7 @@ def get_merged_bid_workflow_states() -> List[Dict[str, Any]]:
             "is_optional_state": 0,
             "update_field": "bid_document_status",
             "update_value": "pending to publish bid",
+            "only_allow_edit_for": "Marketing Team",
             "only_visible_to": ["Procurement Officer", "Managing Director", "Marketing Team"],
             "only_hide_to": []
         },
@@ -123,6 +133,7 @@ def get_merged_bid_workflow_states() -> List[Dict[str, Any]]:
             "is_optional_state": 0,
             "update_field": "bid_document_status",
             "update_value": "waiting for Vendors query",
+            "only_allow_edit_for": "System Manager",
             "only_visible_to": [],
             "only_hide_to": []
         },
@@ -134,6 +145,7 @@ def get_merged_bid_workflow_states() -> List[Dict[str, Any]]:
             "is_optional_state": 1,
             "update_field": "bid_document_status",
             "update_value": "pending to upload TEC MOM",
+            "only_allow_edit_for": "Procurement Officer",
             "only_visible_to": ["Procurement Officer", "Managing Director", "Marketing Team"],
             "only_hide_to": []
         },
@@ -145,6 +157,7 @@ def get_merged_bid_workflow_states() -> List[Dict[str, Any]]:
             "is_optional_state": 0,
             "update_field": "bid_document_status",
             "update_value": "pending for CGM Approval",
+            "only_allow_edit_for": "Chief General Manager",
             "only_visible_to": ["Procurement Officer", "Chief General Manager"],
             "only_hide_to": []
         },
@@ -156,6 +169,7 @@ def get_merged_bid_workflow_states() -> List[Dict[str, Any]]:
             "is_optional_state": 0,
             "update_field": "bid_document_status",
             "update_value": "pending for MD Approval",
+            "only_allow_edit_for": "Managing Director",
             "only_visible_to": ["Procurement Officer", "Chief General Manager", "Managing Director"],
             "only_hide_to": []
         },
@@ -167,6 +181,7 @@ def get_merged_bid_workflow_states() -> List[Dict[str, Any]]:
             "is_optional_state": 0,
             "update_field": "bid_document_status",
             "update_value": "pending to upload FECMOM",
+            "only_allow_edit_for": "Procurement Officer",
             "only_visible_to": ["Procurement Officer", "Managing Director"],
             "only_hide_to": []
         },
@@ -178,6 +193,7 @@ def get_merged_bid_workflow_states() -> List[Dict[str, Any]]:
             "is_optional_state": 0,
             "update_field": "bid_document_status",
             "update_value": "pending for CGM Approval",
+            "only_allow_edit_for": "Chief General Manager",
             "only_visible_to": ["Procurement Officer", "Managing Director"],
             "only_hide_to": []
         },
@@ -189,6 +205,7 @@ def get_merged_bid_workflow_states() -> List[Dict[str, Any]]:
             "is_optional_state": 0,
             "update_field": "bid_document_status",
             "update_value": "pending for MD Approval",
+            "only_allow_edit_for": "Managing Director",
             "only_visible_to": ["Procurement Officer", "Chief General Manager", "Managing Director"],
             "only_hide_to": []
         },
@@ -200,6 +217,7 @@ def get_merged_bid_workflow_states() -> List[Dict[str, Any]]:
             "is_optional_state": 0,
             "update_field": "bid_document_status",
             "update_value": "Approved",
+            "only_allow_edit_for": "System Manager",
             "only_visible_to": ["Procurement Officer", "Managing Director", "Marketing Team"],
             "only_hide_to": []
         },
@@ -211,6 +229,7 @@ def get_merged_bid_workflow_states() -> List[Dict[str, Any]]:
             "is_optional_state": 0,
             "update_field": "bid_document_status",
             "update_value": "Rejected",
+            "only_allow_edit_for": "Procurement Officer",
             "only_visible_to": [],
             "only_hide_to": []
         },
@@ -222,6 +241,7 @@ def get_merged_bid_workflow_states() -> List[Dict[str, Any]]:
             "is_optional_state": 0,
             "update_field": "bid_document_status",
             "update_value": "RQ Rejected By MD",
+            "only_allow_edit_for": "Procurement Officer",
             "only_visible_to": [],
             "only_hide_to": []
         },
@@ -233,6 +253,7 @@ def get_merged_bid_workflow_states() -> List[Dict[str, Any]]:
             "is_optional_state": 0,
             "update_field": "bid_document_status",
             "update_value": "BCCM Rejected By PD",
+            "only_allow_edit_for": "Procurement Officer",
             "only_visible_to": [],
             "only_hide_to": []
         },
@@ -244,6 +265,7 @@ def get_merged_bid_workflow_states() -> List[Dict[str, Any]]:
             "is_optional_state": 0,
             "update_field": "bid_document_status",
             "update_value": "BCCM Rejected By CGM",
+            "only_allow_edit_for": "Procurement Officer",
             "only_visible_to": [],
             "only_hide_to": []
         },
@@ -255,6 +277,7 @@ def get_merged_bid_workflow_states() -> List[Dict[str, Any]]:
             "is_optional_state": 0,
             "update_field": "bid_document_status",
             "update_value": "BCCM Rejected By MD",
+            "only_allow_edit_for": "Procurement Officer",
             "only_visible_to": [],
             "only_hide_to": []
         },
@@ -266,6 +289,7 @@ def get_merged_bid_workflow_states() -> List[Dict[str, Any]]:
             "is_optional_state": 0,
             "update_field": "bid_document_status",
             "update_value": "UBO Rejected By CGM",
+            "only_allow_edit_for": "Procurement Officer",
             "only_visible_to": [],
             "only_hide_to": []
         },
@@ -277,6 +301,7 @@ def get_merged_bid_workflow_states() -> List[Dict[str, Any]]:
             "is_optional_state": 0,
             "update_field": "bid_document_status",
             "update_value": "UBO Rejected By MD",
+            "only_allow_edit_for": "Procurement Officer",
             "only_visible_to": [],
             "only_hide_to": []
         },
@@ -288,6 +313,7 @@ def get_merged_bid_workflow_states() -> List[Dict[str, Any]]:
             "is_optional_state": 0,
             "update_field": "bid_document_status",
             "update_value": "TECMOM Rejected By CGM",
+            "only_allow_edit_for": "Procurement Officer",
             "only_visible_to": [],
             "only_hide_to": []
         },
@@ -299,6 +325,7 @@ def get_merged_bid_workflow_states() -> List[Dict[str, Any]]:
             "is_optional_state": 0,
             "update_field": "bid_document_status",
             "update_value": "TECMOM Rejected By MD",
+            "only_allow_edit_for": "Procurement Officer",
             "only_visible_to": [],
             "only_hide_to": []
         },
@@ -310,6 +337,7 @@ def get_merged_bid_workflow_states() -> List[Dict[str, Any]]:
             "is_optional_state": 0,
             "update_field": "bid_document_status",
             "update_value": "FECMOM Rejected By CGM",
+            "only_allow_edit_for": "Procurement Officer",
             "only_visible_to": [],
             "only_hide_to": []
         },
@@ -321,6 +349,7 @@ def get_merged_bid_workflow_states() -> List[Dict[str, Any]]:
             "is_optional_state": 0,
             "update_field": "bid_document_status",
             "update_value": "FECMOM Rejected By MD",
+            "only_allow_edit_for": "Procurement Officer",
             "only_visible_to": [],
             "only_hide_to": []
         }

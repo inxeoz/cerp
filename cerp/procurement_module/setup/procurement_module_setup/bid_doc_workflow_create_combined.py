@@ -27,18 +27,19 @@ def create_bid_doc_workflow_combined():
         #roles_result = create_bid_roles() # roles will be added through document 
         
         # Create workflow actions
-        actions_result = create_bid_doc_workflow_actions()
+        actions_result = create_bid_doc_workflow_actions() #done
         
         # Create workflow states
-        states_result = create_bid_doc_workflow_states()
+        states_result = create_bid_doc_workflow_states() #done
+
+        # Create workflow
+        workflow_result = create_bid_workflow()
         
         # Create workflow transitions
         transitions_result = create_bid_doc_workflow_transitions()
         
-        # Create workflow
-        workflow_result = create_bid_workflow()
 
-        role_profiles_setup = create_bid_doc_role_profiles()
+        role_profiles_setup = create_bid_doc_role_profiles() # done
 
         users_result = create_bid_user()
         
