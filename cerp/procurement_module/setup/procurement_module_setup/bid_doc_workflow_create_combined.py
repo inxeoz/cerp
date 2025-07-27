@@ -3,9 +3,9 @@
 import frappe
 from typing import List, Dict, Any
 
-from cerp.procurement_module.setup.procurement_module_setup.bid_doc_role_create import create_bid_roles
+# from cerp.procurement_module.setup.procurement_module_setup.bid_doc_role_create import create_bid_roles
 from cerp.procurement_module.setup.procurement_module_setup.bid_doc_workflow_action_master_create import create_bid_doc_workflow_actions
-from cerp.procurement_module.setup.procurement_module_setup.bid_doc_workflow_states_create import create_bid_doc_workflow_states
+from cerp.procurement_module.setup.procurement_module_setup.bid_doc_workflow_states_create import create_bid_document_workflow_states
 from cerp.procurement_module.setup.procurement_module_setup.bid_doc_workflow_transition_create import create_bid_doc_workflow_transitions
 
 from cerp.procurement_module.setup.procurement_module_setup.bid_doc_workflow_create import create_bid_workflow
@@ -17,7 +17,7 @@ from cerp.procurement_module.setup.procurement_module_setup.bid_doc_user_create 
 
 from cerp.procurement_module.setup.procurement_module_setup.bid_doc_workspace_create import create_bid_workspace
 
-from cerp.procurement_module.setup.procurement_module_setup.bid_doc_html_create import create_bid_name_email_html_block
+from cerp.procurement_module.setup.procurement_module_setup.bid_doc_html_block_create import create_bid_name_email_html_block
 
 
 def create_bid_doc_workflow_combined():
@@ -34,7 +34,7 @@ def create_bid_doc_workflow_combined():
         actions_result = create_bid_doc_workflow_actions() #done
         
         # Create workflow states
-        states_result = create_bid_doc_workflow_states() #done
+        states_result = create_bid_document_workflow_states() #done
 
         # Create workflow
         workflow_result = create_bid_workflow() #done
