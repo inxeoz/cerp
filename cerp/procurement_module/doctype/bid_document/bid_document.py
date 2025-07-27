@@ -26,10 +26,10 @@ def permission_query_conditions(user):
 
         if len(only_visible_to) > 0:
             if roles[0] not in only_visible_to:
-                not_show_states.append(state["state"])
+                not_show_states.append(state["workflow_state_name"])
 
         if roles[0] in only_hide_to:
-            not_show_states.append(state["state"])
+            not_show_states.append(state["workflow_state_name"])
 
     joined_list = f"('{ "','".join(not_show_states)}')"
     #frappe.msgprint(f"{joined_list}")
