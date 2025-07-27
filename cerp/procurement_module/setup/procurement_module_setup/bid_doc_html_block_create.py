@@ -1,7 +1,7 @@
 from cerp.procurement_module.setup.default_setup_methods.create_html_block import create_html_block
 
 
-def name_email_create_html_block():
+def create_bid_name_email_html_block():
     return create_html_block(
         name="info_about_user",
 
