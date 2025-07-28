@@ -47,7 +47,8 @@ def get_bid_users():
             "role_profile_name": "Vendor Profile" ,
             "new_password" : "asd@123",
             "allowed_modules": ["Procurement Module" , "Desk"] 
-        }
+        },
+        
         {
             "user_first_name": "VEN2",                     
             "user_email": "7@inxeoz.com",               
