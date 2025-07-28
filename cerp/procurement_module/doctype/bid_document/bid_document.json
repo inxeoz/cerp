@@ -25,6 +25,7 @@
   "mom_table",
   "vendor_response_section",
   "vendors_query_response",
+  "add_new_response",
   "corrigendum_section",
   "jk",
   "bid_proposal_section",
@@ -90,7 +91,6 @@
   {
    "fieldname": "status_section",
    "fieldtype": "Section Break",
-   "hidden": 1,
    "label": "Status"
   },
   {
@@ -167,13 +167,18 @@
    "fieldname": "bid_proposal_section",
    "fieldtype": "Section Break",
    "label": "Bid Proposal Section"
+  },
+  {
+   "fieldname": "add_new_response",
+   "fieldtype": "Button",
+   "label": "Add New Response"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-29 00:20:37.997174",
+ "modified": "2025-07-29 01:04:08.242914",
  "modified_by": "Administrator",
  "module": "Procurement Module",
  "name": "Bid Document",
