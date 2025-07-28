@@ -23,7 +23,7 @@
   "committee_section",
   "committee_member",
   "tec_mom_section",
-  "nametec",
+  "tec_mom",
   "fec_mom_section",
   "namefec",
   "vendors_query_section",
@@ -133,11 +133,6 @@
    "label": "TEC MOM"
   },
   {
-   "fieldname": "nametec",
-   "fieldtype": "Data",
-   "label": "Name"
-  },
-  {
    "fieldname": "fec_mom_section",
    "fieldtype": "Section Break",
    "label": "FEC MOM"
@@ -187,13 +182,19 @@
   {
    "fieldname": "column_break_ozeh",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tec_mom",
+   "fieldtype": "Table",
+   "label": "Name",
+   "options": "MOM TABLE"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-23 17:35:09.858329",
+ "modified": "2025-07-28 10:56:09.791301",
  "modified_by": "Administrator",
  "module": "Procurement Module",
  "name": "Bid Document",

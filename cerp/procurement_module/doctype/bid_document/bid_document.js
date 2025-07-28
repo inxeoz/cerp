@@ -1,54 +1,62 @@
 // // Copyright (c) 2025, inxeoz and contributors
 // // For license information, please see license.txt
 
-// // frappe.ui.form.on("Bid Document", {
-// // 	refresh(frm) {
-
-// // 	},
-// // });
-
-
-// function action_option_to_upload_pending(frm) {
-//     user_roles = frappe.user_roles
-
-//     if (user_roles.includes('Managing Director')) {
-//         if (frm.doc.bcc_upload_status == 1) {
-
-//             // add a normal menu item
-//             page.add_action_item('Delete', () => delete_items())
-
-//         }
-//     }
-// }
-
-
-// function next_state(frm) {
-//    console.log('Doc Status:', frm.doc.workflow_state);
-//    console.log('Role[0]', frappe.user_roles[0])
-// }
-
-// function first_upper(text) {
-
-//     let str_arr = text.split(" ");
-//     console.log(str_arr)
-//     let upper_str = "";
-
-//     for (const str of str_arr) {
-//         if (str === str.toUpperCase()) {
-//             console.log(str)
-//             upper_str += " "+str;
-//         }else{
-//           break;
-//         }
-//     }
-
-//     return upper_str.trim();
-
-// }
-
-
+frappe.ui.form.on('MOM TABLE', {
+    
+    // meeting id function
+    meeting_id: function(frm, cdt, cdn) {
+        let row = locals[cdt][cdn];
+        
+        if (row.meeting_id) {
+            frappe.call({
+                method: 'frappe.client.get_value',
+                args: {
+                    doctype: 'Minutes of Meeting',
+                    filters: { name: row.meeting_id },
+                    fieldname: ['agenda', 'type_of_meeting']
+                },
+                callback: function(r) {
+                    if (r.message) {
+                        // Set values in the row
+                        frappe.model.set_value(cdt, cdn, {
+                            'agenda': r.message.agenda || '',
+                            'type_of_meeting': r.message.type_of_meeting || ''
+                        });
+                    }
+                }
+            });
+        } else {
+            // Clear fields
+            frappe.model.set_value(cdt, cdn, {
+                'agenda': '',
+                'type_of_meeting': ''
+            });
+        }
+    },
+    
+    // Trigger when a new row is added
+    tec_mom_add: function(frm, cdt, cdn) {
+        // Clear fields for new row
+        let row = locals[cdt][cdn];
+        row.agenda = '';
+        row.type_of_meeting = '';
+    }
+});
 
 frappe.ui.form.on("Bid Document", {
+
+    onload: function(frm) {
+        // Fetch data for existing rows when form loads
+        if (frm.doc.tec_mom) {
+            frm.doc.tec_mom.forEach(function(row) {
+                if (row.meeting_id && (!row.agenda || !row.type_of_meeting)) {
+                    // Trigger the meeting_id function for each row
+                    frm.trigger('meeting_id', row.doctype, row.name);
+                }
+            });
+        }
+    },
+
     refresh(frm) {
    
         user =frappe.session.user
@@ -85,13 +93,51 @@ frappe.ui.form.on("Bid Document", {
 });
 
 
-// frappe.ui.form.on('Your Doctype', {
-//     refresh(frm) {
-//         // Example: hide if workflow_state == "Rejected"
-//         if (frm.doc.workflow_state == "Rejected") {
-//             frm.set_df_property('your_fieldname', 'hidden', 1); // hide
-//         } else {
-//             frm.set_df_property('your_fieldname', 'hidden', 0); // show
+
+// frappe.ui.form.on('MOM TABLE', {
+//     meeting_id: function(frm, cdt, cdn) {
+//         let row = locals[cdt][cdn];
+        
+//         if (row.meeting_id) {
+//             // Fetch full document
+//             frappe.call({
+//                 method: 'frappe.client.get',
+//                 args: {
+//                     doctype: 'Minutes of Meeting',
+//                     name: row.meeting_id
+//                 },
+//                 callback: function(r) {
+//                     if (r.message) {
+//                         let mom = r.message;
+                        
+//                         // Display fetched data
+//                         frappe.msgprint(`
+//                             <h4>Fetched MOM Details:</h4>
+//                             <table class="table table-bordered">
+//                                 <tr>
+//                                     <td><b>Meeting ID</b></td>
+//                                     <td>${mom.name}</td>
+//                                 </tr>
+//                                 <tr>
+//                                     <td><b>Agenda</b></td>
+//                                     <td>${mom.agenda || '<i>No agenda set</i>'}</td>
+//                                 </tr>
+//                                 <tr>
+//                                     <td><b>Type of Meeting</b></td>
+//                                     <td>${mom.type_of_meeting || '<i>No type set</i>'}</td>
+//                                 </tr>
+//                             </table>
+//                         `);
+//                     }
+//                 },
+//                 error: function(err) {
+//                     frappe.msgprint({
+//                         title: 'Error',
+//                         message: 'Could not fetch MOM details',
+//                         indicator: 'red'
+//                     });
+//                 }
+//             });
 //         }
 //     }
 // });

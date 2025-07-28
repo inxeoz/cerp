@@ -1,0 +1,57 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-07-28 10:54:04.998447",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "meeting_id",
+  "agenda",
+  "type_of_meeting"
+ ],
+ "fields": [
+  {
+   "fieldname": "agenda",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "agenda",
+   "read_only": 1
+  },
+  {
+   "fieldname": "type_of_meeting",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Type Of Meeting",
+   "options": "TEC Meeting\nFEC Meeting\nGeneral Meeting",
+   "read_only": 1
+  },
+  {
+   "fieldname": "meeting_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Meeting Id",
+   "options": "Minutes of Meeting"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-07-28 11:25:31.987661",
+ "modified_by": "Administrator",
+ "module": "Procurement Module",
+ "name": "MOM TABLE",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
