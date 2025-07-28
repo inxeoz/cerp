@@ -22,10 +22,8 @@
   "bcc_upload_status",
   "committee_section",
   "committee_member",
-  "tec_mom_section",
-  "tec_mom",
-  "fec_mom_section",
-  "namefec",
+  "minutes_of_meeting",
+  "mom_table",
   "vendors_query_section",
   "name1",
   "vendors_response_section",
@@ -128,21 +126,6 @@
    "label": "Requirement"
   },
   {
-   "fieldname": "tec_mom_section",
-   "fieldtype": "Section Break",
-   "label": "TEC MOM"
-  },
-  {
-   "fieldname": "fec_mom_section",
-   "fieldtype": "Section Break",
-   "label": "FEC MOM"
-  },
-  {
-   "fieldname": "namefec",
-   "fieldtype": "Data",
-   "label": "Name"
-  },
-  {
    "fieldname": "committee_section",
    "fieldtype": "Section Break",
    "label": "Committee"
@@ -184,7 +167,12 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "tec_mom",
+   "fieldname": "minutes_of_meeting",
+   "fieldtype": "Section Break",
+   "label": "Minutes Of Meeting"
+  },
+  {
+   "fieldname": "mom_table",
    "fieldtype": "Table",
    "label": "Name",
    "options": "MOM TABLE"
@@ -194,7 +182,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-28 10:56:09.791301",
+ "modified": "2025-07-28 12:15:29.492781",
  "modified_by": "Administrator",
  "module": "Procurement Module",
  "name": "Bid Document",

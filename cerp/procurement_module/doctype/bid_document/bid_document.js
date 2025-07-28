@@ -2,7 +2,7 @@
 // // For license information, please see license.txt
 
 frappe.ui.form.on('MOM TABLE', {
-    
+
     // meeting id function
     meeting_id: function(frm, cdt, cdn) {
         let row = locals[cdt][cdn];
@@ -35,7 +35,7 @@ frappe.ui.form.on('MOM TABLE', {
     },
     
     // Trigger when a new row is added
-    tec_mom_add: function(frm, cdt, cdn) {
+    mom_table_add: function(frm, cdt, cdn) {
         // Clear fields for new row
         let row = locals[cdt][cdn];
         row.agenda = '';
@@ -47,8 +47,8 @@ frappe.ui.form.on("Bid Document", {
 
     onload: function(frm) {
         // Fetch data for existing rows when form loads
-        if (frm.doc.tec_mom) {
-            frm.doc.tec_mom.forEach(function(row) {
+        if (frm.doc.mom_table) {
+            frm.doc.mom_table.forEach(function(row) {
                 if (row.meeting_id && (!row.agenda || !row.type_of_meeting)) {
                     // Trigger the meeting_id function for each row
                     frm.trigger('meeting_id', row.doctype, row.name);
