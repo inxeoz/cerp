@@ -1,6 +1,7 @@
 import frappe
 from typing import List, Dict, Any
 
+@frappe.whitelist()
 def get_merged_bid_workflow_states() -> List[Dict[str, Any]]:
     """Returns merged workflow states configuration"""
 

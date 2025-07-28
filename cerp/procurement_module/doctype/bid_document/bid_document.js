@@ -55,6 +55,22 @@ frappe.ui.form.on("Bid Document", {
                 }
             });
         }
+
+        // frappe.call({
+        //     method: 'cerp.procurement_module.setup.procurement_module_setup.get_bid_doc_workflow_states.get_merged_bid_workflow_states',
+        //     args: {
+        //         customer_id: frm.doc.customer
+        //     },
+        //     callback: function(response) {
+        //         if (response.message) {
+        //             frm.set_value('customer_email', response.message.email);
+        //             frm.set_value('customer_phone', response.message.phone);
+        //             frappe.msgprint(`Customer Group: ${response.message.customer_group}`);
+        //         }
+        //     }
+        // });
+
+
     },
 
     refresh(frm) {

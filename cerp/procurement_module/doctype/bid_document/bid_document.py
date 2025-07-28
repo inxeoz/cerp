@@ -45,6 +45,10 @@ class BidDocument(Document):
         self._previous_workflow_state = frappe.db.get_value(self.doctype, self.name, "workflow_state")
 
     def on_update(self):
+
+        frappe.msgprint(f"Bid Document {self.name}")
+
+        return
         def first_upper(text):
 
             str_arr = text.split(" ")
