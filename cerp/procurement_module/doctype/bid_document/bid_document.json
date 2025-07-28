@@ -70,7 +70,7 @@
   {
    "fieldname": "committee_member",
    "fieldtype": "Table",
-   "label": "Committee Member",
+   "label": "Committee",
    "options": "Committee Member Table"
   },
   {
@@ -182,7 +182,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-28 12:15:29.492781",
+ "modified": "2025-07-28 12:52:15.913986",
  "modified_by": "Administrator",
  "module": "Procurement Module",
  "name": "Bid Document",

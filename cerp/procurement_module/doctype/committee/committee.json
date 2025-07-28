@@ -1,0 +1,82 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "CMT.###.",
+ "creation": "2025-07-28 12:31:34.988412",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_f1ml",
+  "amended_from",
+  "committee_name",
+  "committee_agenda",
+  "committe_creation_date",
+  "table_ohfi"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_f1ml",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Committee",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "committee_name",
+   "fieldtype": "Data",
+   "label": "Committee Name"
+  },
+  {
+   "fieldname": "committee_agenda",
+   "fieldtype": "Data",
+   "label": "Committee Agenda"
+  },
+  {
+   "fieldname": "committe_creation_date",
+   "fieldtype": "Date",
+   "label": "Committe Creation Date"
+  },
+  {
+   "fieldname": "table_ohfi",
+   "fieldtype": "Table",
+   "label": "Committe Members",
+   "options": "Committee Member Table"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-07-28 12:34:06.485771",
+ "modified_by": "Administrator",
+ "module": "Procurement Module",
+ "name": "Committee",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
