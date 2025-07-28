@@ -44,11 +44,6 @@ class BidDocument(Document):
         # Get the current value from the database before this save
         self._previous_workflow_state = frappe.db.get_value(self.doctype, self.name, "workflow_state")
 
-
-
-            
-
-
     def on_update(self):
         def first_upper(text):
 
@@ -79,7 +74,7 @@ class BidDocument(Document):
 
     def validate(self):
         role_counts = {}
-        for row in self.committee_member:
+        for row in self.committee_member_table:
             role = row.role_in_committee
             if role:
                 role_counts[role] = role_counts.get(role, 0) + 1

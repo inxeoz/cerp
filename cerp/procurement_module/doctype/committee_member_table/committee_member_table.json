@@ -14,13 +14,12 @@
  "fields": [
   {
    "fieldname": "member",
-   "fieldtype": "Link",
+   "fieldtype": "Data",
    "in_filter": 1,
    "in_list_view": 1,
    "in_preview": 1,
    "in_standard_filter": 1,
    "label": "Member Name",
-   "options": "Member",
    "search_index": 1
   },
   {
@@ -49,7 +48,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-07-28 12:28:52.047060",
+ "modified": "2025-07-28 14:41:53.450084",
  "modified_by": "Administrator",
  "module": "Procurement Module",
  "name": "Committee Member Table",
