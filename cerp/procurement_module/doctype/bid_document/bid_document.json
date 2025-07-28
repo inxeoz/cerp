@@ -10,7 +10,7 @@
   "bid_document_status",
   "requirements_section",
   "requirement",
-  "main_bid_details",
+  "main_bid_details_section",
   "amended_from",
   "bid_title",
   "description__scope_of_work",
@@ -21,13 +21,13 @@
   "ubo_upload_status",
   "committee_section",
   "committee_member_table",
-  "minutes_of_meeting",
+  "minutes_of_meeting_section",
   "mom_table",
-  "vendors_response_section",
+  "vendor_response_section",
   "vendors_query_response",
   "corrigendum_section",
   "jk",
-  "section_break_yhhf",
+  "bid_proposal_section",
   "bid_proposals"
  ],
  "fields": [
@@ -90,6 +90,7 @@
   {
    "fieldname": "status_section",
    "fieldtype": "Section Break",
+   "hidden": 1,
    "label": "Status"
   },
   {
@@ -118,21 +119,6 @@
    "label": "Link To Corrigendum"
   },
   {
-   "fieldname": "vendors_response_section",
-   "fieldtype": "Section Break",
-   "label": "Vendors Query / Response"
-  },
-  {
-   "fieldname": "main_bid_details",
-   "fieldtype": "Section Break",
-   "label": "Main Bid Details"
-  },
-  {
-   "fieldname": "minutes_of_meeting",
-   "fieldtype": "Section Break",
-   "label": "Minutes Of Meeting"
-  },
-  {
    "fieldname": "mom_table",
    "fieldtype": "Table",
    "label": "Name",
@@ -157,22 +143,37 @@
    "options": "Vendor Query Response Table"
   },
   {
-   "fieldname": "section_break_yhhf",
-   "fieldtype": "Section Break",
-   "label": "Bid Proposal Section"
-  },
-  {
    "fieldname": "bid_proposals",
    "fieldtype": "Table",
    "label": "Bid Proposals",
    "options": "Bid Proposal Table"
+  },
+  {
+   "fieldname": "main_bid_details_section",
+   "fieldtype": "Section Break",
+   "label": "Main Bid Details"
+  },
+  {
+   "fieldname": "minutes_of_meeting_section",
+   "fieldtype": "Section Break",
+   "label": "Minutes Of Meeting"
+  },
+  {
+   "fieldname": "vendor_response_section",
+   "fieldtype": "Section Break",
+   "label": "Vendors Query / Response"
+  },
+  {
+   "fieldname": "bid_proposal_section",
+   "fieldtype": "Section Break",
+   "label": "Bid Proposal Section"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-28 17:36:34.418550",
+ "modified": "2025-07-29 00:20:37.997174",
  "modified_by": "Administrator",
  "module": "Procurement Module",
  "name": "Bid Document",

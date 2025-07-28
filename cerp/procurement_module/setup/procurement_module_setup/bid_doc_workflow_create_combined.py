@@ -53,7 +53,6 @@ def create_bid_doc_workflow_combined():
         
         return {
             "status": "success",
-            "roles": roles_result,
             "actions": actions_result,
             "states": states_result,
             "transitions": transitions_result,
