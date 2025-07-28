@@ -35,6 +35,9 @@
   {
    "fieldname": "user",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
    "label": "User",
    "options": "User"
   },
@@ -51,7 +54,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-07-28 14:50:02.555600",
+ "modified": "2025-07-28 16:41:13.245294",
  "modified_by": "Administrator",
  "module": "Procurement Module",
  "name": "Committee Member Table",
