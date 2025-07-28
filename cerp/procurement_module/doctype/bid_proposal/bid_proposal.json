@@ -1,22 +1,21 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "RS.####.",
- "creation": "2025-07-21 22:01:22.369443",
+ "autoname": "BP.####.",
+ "creation": "2025-07-28 16:13:55.040852",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "section_break_btfg",
+  "section_break_woqb",
   "amended_from",
   "bid_document",
   "vendor_name",
-  "vendor_response",
-  "supporting_documents",
-  "date_of_submission"
+  "project_implementation_plan",
+  "contact_person"
  ],
  "fields": [
   {
-   "fieldname": "section_break_btfg",
+   "fieldname": "section_break_woqb",
    "fieldtype": "Section Break"
   },
   {
@@ -24,15 +23,10 @@
    "fieldtype": "Link",
    "label": "Amended From",
    "no_copy": 1,
-   "options": "Response Sheet",
+   "options": "Bid Proposal",
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
-  },
-  {
-   "fieldname": "vendor_name",
-   "fieldtype": "Data",
-   "label": "Vendor Name"
   },
   {
    "fieldname": "bid_document",
@@ -41,29 +35,29 @@
    "options": "Bid Document"
   },
   {
-   "fieldname": "vendor_response",
+   "fieldname": "vendor_name",
    "fieldtype": "Data",
-   "label": "Vendor Response"
+   "label": "Vendor Name"
   },
   {
-   "fieldname": "supporting_documents",
-   "fieldtype": "Attach",
-   "label": "Supporting Documents"
+   "fieldname": "project_implementation_plan",
+   "fieldtype": "Data",
+   "label": "Project Implementation Plan"
   },
   {
-   "fieldname": "date_of_submission",
-   "fieldtype": "Date",
-   "label": "Date Of Submission"
+   "fieldname": "contact_person",
+   "fieldtype": "Phone",
+   "label": "Contact Person"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-28 16:10:59.730597",
+ "modified": "2025-07-28 16:15:44.638859",
  "modified_by": "Administrator",
  "module": "Procurement Module",
- "name": "Response Sheet",
+ "name": "Bid Proposal",
  "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
@@ -82,7 +76,7 @@
   }
  ],
  "row_format": "Dynamic",
- "sort_field": "modified",
+ "sort_field": "creation",
  "sort_order": "DESC",
  "states": []
 }

@@ -1,14 +1,13 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "BID.####.",
  "creation": "2025-07-21 21:57:52.423186",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "status_section",
   "bid_document_status",
-  "column_break_ozeh",
-  "bid_current_stage",
   "requirements_section",
   "requirement",
   "main_bid_details",
@@ -19,17 +18,17 @@
   "submission_start",
   "submission_end",
   "attach_document",
-  "bcc_upload_status",
+  "ubo_upload_status",
   "committee_section",
   "committee_member_table",
   "minutes_of_meeting",
   "mom_table",
-  "vendors_query_section",
-  "name1",
   "vendors_response_section",
-  "responce",
+  "vendors_query_response",
   "corrigendum_section",
-  "jk"
+  "jk",
+  "section_break_yhhf",
+  "bid_proposals"
  ],
  "fields": [
   {
@@ -89,25 +88,9 @@
    "label": "Attach Document"
   },
   {
-   "default": "0",
-   "fieldname": "bcc_upload_status",
-   "fieldtype": "Check",
-   "label": "Bcc Upload Status"
-  },
-  {
    "fieldname": "status_section",
    "fieldtype": "Section Break",
    "label": "Status"
-  },
-  {
-   "fieldname": "vendors_query_section",
-   "fieldtype": "Section Break",
-   "label": "Vendors Query"
-  },
-  {
-   "fieldname": "name1",
-   "fieldtype": "Data",
-   "label": "Name"
   },
   {
    "fieldname": "requirements_section",
@@ -132,33 +115,17 @@
   {
    "fieldname": "jk",
    "fieldtype": "Data",
-   "label": "jk"
+   "label": "Link To Corrigendum"
   },
   {
    "fieldname": "vendors_response_section",
    "fieldtype": "Section Break",
-   "label": "Vendors Response"
-  },
-  {
-   "fieldname": "responce",
-   "fieldtype": "Data",
-   "label": "Responce"
+   "label": "Vendors Query / Response"
   },
   {
    "fieldname": "main_bid_details",
    "fieldtype": "Section Break",
    "label": "Main Bid Details"
-  },
-  {
-   "fieldname": "bid_current_stage",
-   "fieldtype": "Select",
-   "label": "Bid Current Stage",
-   "options": "RQ\nBCM\nUBO\nTEC\nFEC",
-   "read_only": 1
-  },
-  {
-   "fieldname": "column_break_ozeh",
-   "fieldtype": "Column Break"
   },
   {
    "fieldname": "minutes_of_meeting",
@@ -176,16 +143,40 @@
    "fieldtype": "Table",
    "label": "Committee",
    "options": "Committee Member Table"
+  },
+  {
+   "default": "0",
+   "fieldname": "ubo_upload_status",
+   "fieldtype": "Check",
+   "label": "UBO Upload Status"
+  },
+  {
+   "fieldname": "vendors_query_response",
+   "fieldtype": "Table",
+   "label": "Responce",
+   "options": "Vendor Query Response Table"
+  },
+  {
+   "fieldname": "section_break_yhhf",
+   "fieldtype": "Section Break",
+   "label": "Bid Proposal Section"
+  },
+  {
+   "fieldname": "bid_proposals",
+   "fieldtype": "Table",
+   "label": "Bid Proposals",
+   "options": "Bid Proposal Table"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-28 14:37:29.039836",
+ "modified": "2025-07-28 16:32:44.934133",
  "modified_by": "Administrator",
  "module": "Procurement Module",
  "name": "Bid Document",
+ "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
   {

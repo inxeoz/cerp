@@ -1,12 +1,17 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "CR.####.",
  "creation": "2025-07-21 21:58:07.859503",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "section_break_rlwn",
-  "amended_from"
+  "amended_from",
+  "bid_document",
+  "issue_date",
+  "reason_for_change",
+  "contact_person"
  ],
  "fields": [
   {
@@ -22,16 +27,38 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "fieldname": "bid_document",
+   "fieldtype": "Link",
+   "label": "Bid Document",
+   "options": "Bid Document"
+  },
+  {
+   "fieldname": "issue_date",
+   "fieldtype": "Date",
+   "label": "Issue Date"
+  },
+  {
+   "fieldname": "reason_for_change",
+   "fieldtype": "Data",
+   "label": "Reason For Change"
+  },
+  {
+   "fieldname": "contact_person",
+   "fieldtype": "Phone",
+   "label": "Contact Person"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-21 21:58:07.859503",
+ "modified": "2025-07-28 16:13:29.844119",
  "modified_by": "Administrator",
  "module": "Procurement Module",
  "name": "Corrigendum",
+ "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
   {
