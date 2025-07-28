@@ -46,7 +46,7 @@ class BidDocument(Document):
 
     def on_update(self):
 
-        frappe.msgprint(f"Bid Document {self.name}")
+        #frappe.msgprint(f"Bid Document {self.name}")
 
         return
         def first_upper(text):
