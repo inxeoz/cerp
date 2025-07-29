@@ -20,8 +20,7 @@
    "in_preview": 1,
    "in_standard_filter": 1,
    "label": "Role in Committee",
-   "options": "\nOther\nChairman",
-   "read_only": 1
+   "options": "\nOther\nChairman"
   },
   {
    "fieldname": "designation",
@@ -39,8 +38,10 @@
    "in_preview": 1,
    "in_standard_filter": 1,
    "label": "Member id",
+   "no_copy": 1,
+   "not_nullable": 1,
    "options": "Member",
-   "search_index": 1
+   "unique": 1
   },
   {
    "fieldname": "member_name",
@@ -58,7 +59,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-07-29 16:00:24.165247",
+ "modified": "2025-07-29 16:47:38.813830",
  "modified_by": "Administrator",
  "module": "Procurement Module",
  "name": "Committee Member Table",
