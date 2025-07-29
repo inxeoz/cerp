@@ -247,3 +247,11 @@ permission_query_conditions = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+
+
+
+fixtures = [
+    {
+        "doctype": "Custom DocPerm"
+    }
+]
