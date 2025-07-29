@@ -21,6 +21,7 @@
   "ubo_upload_status",
   "committee_section",
   "committee_member_table",
+  "chariman",
   "minutes_of_meeting_section",
   "mom_table",
   "vendor_response_section",
@@ -173,13 +174,19 @@
    "fieldname": "add_new_response",
    "fieldtype": "Button",
    "label": "Add New Response"
+  },
+  {
+   "fieldname": "chariman",
+   "fieldtype": "Data",
+   "label": "Chariman",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-29 12:49:43.013241",
+ "modified": "2025-07-29 14:43:55.116761",
  "modified_by": "Administrator",
  "module": "Procurement Module",
  "name": "Bid Document",
