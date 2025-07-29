@@ -1,0 +1,38 @@
+[
+ {
+  "app": "frappe",
+  "charts": [],
+  "content": "[{\"id\":\"pngR3ENcpQ\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Procurement Workspace</span>\",\"col\":12}},{\"id\":\"U7sy9DKB_f\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"info_about_user\",\"col\":12}}]",
+  "custom_blocks": [
+   {
+    "custom_block_name": "info_about_user",
+    "label": "info_about_user"
+   }
+  ],
+  "docstatus": 0,
+  "doctype": "Workspace",
+  "external_link": null,
+  "for_user": "",
+  "hide_custom": 0,
+  "icon": "grid",
+  "indicator_color": "green",
+  "is_hidden": 0,
+  "label": "Procurement Workspace",
+  "link_to": null,
+  "link_type": "DocType",
+  "links": [],
+  "modified": "2025-07-29 21:14:48.964937",
+  "module": null,
+  "name": "Procurement Workspace",
+  "number_cards": [],
+  "parent_page": "",
+  "public": 1,
+  "quick_lists": [],
+  "restrict_to_domain": null,
+  "roles": [],
+  "sequence_id": 23.0,
+  "shortcuts": [],
+  "title": "Procurement Workspace",
+  "type": "Workspace"
+ }
+]

@@ -1,0 +1,74 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Role Profile",
+  "modified": "2025-07-29 17:55:31.288917",
+  "name": "Marketing Team Profile",
+  "role_profile": "Marketing Team Profile",
+  "roles": [
+   {
+    "role": "Marketing Team"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Role Profile",
+  "modified": "2025-07-29 17:55:31.294534",
+  "name": "Managing Director Profile",
+  "role_profile": "Managing Director Profile",
+  "roles": [
+   {
+    "role": "Managing Director"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Role Profile",
+  "modified": "2025-07-29 17:55:31.297024",
+  "name": "Procurement Officer Profile",
+  "role_profile": "Procurement Officer Profile",
+  "roles": [
+   {
+    "role": "Procurement Officer"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Role Profile",
+  "modified": "2025-07-29 17:55:31.299042",
+  "name": "Project Director Profile",
+  "role_profile": "Project Director Profile",
+  "roles": [
+   {
+    "role": "Project Director"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Role Profile",
+  "modified": "2025-07-29 17:55:31.301486",
+  "name": "Chief General Manager Profile",
+  "role_profile": "Chief General Manager Profile",
+  "roles": [
+   {
+    "role": "Chief General Manager"
+   }
+  ]
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Role Profile",
+  "modified": "2025-07-29 17:55:31.303286",
+  "name": "Vendor Profile",
+  "role_profile": "Vendor Profile",
+  "roles": [
+   {
+    "role": "Vendor"
+   }
+  ]
+ }
+]

@@ -283,6 +283,25 @@ fixtures = [
         "filters": {
             "name": "Bid Document Workflow"
         }
+    },
+
+    {
+        "doctype": "Role Profile",
+    },
+
+     {
+        "doctype": "Workspace",
+
+        "filters": {
+            "name": "Procurement Workspace"
+        }
+
+    },
+
+
+     {
+        "doctype": "Custom HTML Block",
+
     }
 ]
 

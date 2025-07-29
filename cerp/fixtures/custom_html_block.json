@@ -1,0 +1,13 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Custom HTML Block",
+  "html": "<div id=\"user-info\">\n                    <div id=\"full_name\"></div>\n                    <div id=\"email\"></div>\n                    </div>",
+  "modified": "2025-07-29 17:55:32.033322",
+  "name": "info_about_user",
+  "private": 0,
+  "roles": [],
+  "script": "frappe.call({\n                method: \"frappe.client.get\",\n                    args: {\n                        doctype: \"User\",\n                        name: frappe.session.user,\n                        },\n                        callback(r) {\n                            if(r.message) {\n                                root_element.querySelector(\"#full_name\").textContent=r.message.full_name;\n                                root_element.querySelector('#email').textContent=r.message.email;\n                            }\n                        }\n            });",
+  "style": "#user-info {\n                display: flex;\n                gap: 10px; /* space between name and email */\n                align-items: center; /* vertically center items */\n                }\n\n                #full_name, #email {\n                padding: 8px 15px;\n                background-color: #cce5ff; /* subtle blue background */\n                border-radius: 6px;\n                font-family: Arial, sans-serif;\n                font-size: 18px; /* increased font size */\n                color: #1a1a1a;\n                font-weight: 600;\n                }"
+ }
+]
