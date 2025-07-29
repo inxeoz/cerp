@@ -285,3 +285,5 @@ fixtures = [
         }
     }
 ]
+
+## bench --site msite.local export-fixtures --app cerp
