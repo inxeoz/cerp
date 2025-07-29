@@ -10,8 +10,7 @@
   "amended_from",
   "member_name",
   "designation",
-  "user",
-  "role_in_committee"
+  "user"
  ],
  "fields": [
   {
@@ -53,19 +52,13 @@
    "in_standard_filter": 1,
    "label": "User",
    "options": "User"
-  },
-  {
-   "fieldname": "role_in_committee",
-   "fieldtype": "Select",
-   "label": "Role_in_committee",
-   "options": "Other\nDeveloper\nVendor\nChairman"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-29 15:45:08.724583",
+ "modified": "2025-07-29 16:41:37.789283",
  "modified_by": "Administrator",
  "module": "Procurement Module",
  "name": "Member",

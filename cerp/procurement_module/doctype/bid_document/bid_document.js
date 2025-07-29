@@ -73,38 +73,41 @@ frappe.ui.form.on('Committee Member Table', {
             return;
         }
         
-        // Fetch member details
+        // Fetch member details (only name and designation)
         frappe.call({
             method: 'frappe.client.get_value',
             args: {
                 doctype: 'Member',
                 filters: { name: row.member_id },
-                fieldname: ['member_name', 'designation', 'role_in_committee']
+                fieldname: ['member_name', 'designation']
             },
             callback: function(r) {
-                if (!r.message) return;
-                
-                // Check for Chairman role
-                if (r.message.role_in_committee === "Chairman") {
-                    const hasChairman = frm.doc.committee_member_table.some(
-                        item => item.name !== cdn && item.role_in_committee === "Chairman"
-                    );
-                    
-                    if (hasChairman) {
-                        frappe.msgprint(__("Only One Chairman allowed"));
-                        removeRowFromTable(frm, 'committee_member_table', cdn);
-                        return;
-                    }
+                if (r.message) {
+                    frappe.model.set_value(cdt, cdn, {
+                        'member_name': r.message.member_name || '',
+                        'designation': r.message.designation || ''
+                    });
                 }
-                
-                // Set values in the row
-                frappe.model.set_value(cdt, cdn, {
-                    'member_name': r.message.member_name || '',
-                    'designation': r.message.designation || '',
-                    'role_in_committee': r.message.role_in_committee || '',
-                });
             }
         });
+    },
+    
+    // Monitor role_in_committee field changes
+    role_in_committee: function(frm, cdt, cdn) {
+        let row = locals[cdt][cdn];
+        
+        if (row.role_in_committee === "Chairman") {
+            // Check if another chairman exists
+            const hasChairman = frm.doc.committee_member_table.some(
+                item => item.name !== cdn && item.role_in_committee === "Chairman"
+            );
+            
+            if (hasChairman) {
+                frappe.msgprint(__("Only One Chairman allowed"));
+                // Clear the role instead of removing the row
+                frappe.model.set_value(cdt, cdn, 'role_in_committee', '');
+            }
+        }
     },
     
     committee_member_table_add: function(frm, cdt, cdn) {
