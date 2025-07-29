@@ -1,0 +1,86 @@
+### App Versions
+```
+{
+	"frappe": "16.0.0-dev",
+	"cerp": "0.0.1"
+}
+```
+### Route
+```
+Form/Bid Document/BID0003
+```
+### Traceback
+```
+Traceback (most recent call last):
+  File "apps/frappe/frappe/app.py", line 121, in application
+    response = frappe.api.handle(request)
+  File "apps/frappe/frappe/api/__init__.py", line 60, in handle
+    data = endpoint(**arguments)
+  File "apps/frappe/frappe/api/v1.py", line 36, in handle_rpc_call
+    return frappe.handler.handle()
+           ~~~~~~~~~~~~~~~~~~~~~^^
+  File "apps/frappe/frappe/handler.py", line 51, in handle
+    data = execute_cmd(cmd)
+  File "apps/frappe/frappe/handler.py", line 84, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "apps/frappe/frappe/__init__.py", line 1127, in call
+    return fn(*args, **newargs)
+  File "apps/frappe/frappe/utils/typing_validations.py", line 36, in wrapper
+    return func(*args, **kwargs)
+  File "apps/frappe/frappe/model/workflow.py", line 131, in apply_workflow
+    doc.save()
+    ~~~~~~~~^^
+  File "apps/frappe/frappe/model/document.py", line 485, in save
+    return self._save(*args, **kwargs)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "apps/frappe/frappe/model/document.py", line 538, in _save
+    self.run_post_save_methods()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "apps/frappe/frappe/model/document.py", line 1323, in run_post_save_methods
+    self.run_method("on_update")
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "apps/frappe/frappe/model/document.py", line 1129, in run_method
+    out = Document.hook(fn)(self, *args, **kwargs)
+  File "apps/frappe/frappe/model/document.py", line 1526, in composer
+    return composed(self, method, *args, **kwargs)
+  File "apps/frappe/frappe/model/document.py", line 1508, in runner
+    add_to_return_value(self, f(self, method, *args, **kwargs))
+                              ~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "apps/frappe/frappe/workflow/doctype/workflow_action/workflow_action.py", line 106, in process_workflow_actions
+    next_possible_transitions = get_next_possible_transitions(workflow, get_doc_workflow_state(doc), doc)
+  File "apps/frappe/frappe/workflow/doctype/workflow_action/workflow_action.py", line 285, in get_next_possible_transitions
+    if not is_transition_condition_satisfied(transition, doc):
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "apps/frappe/frappe/model/workflow.py", line 95, in is_transition_condition_satisfied
+    return frappe.safe_eval(transition.condition, get_workflow_safe_globals(), dict(doc=doc.as_dict()))
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "apps/frappe/frappe/utils/__init__.py", line 1146, in safe_eval
+    return safe_eval(code, eval_globals, eval_locals)
+  File "apps/frappe/frappe/utils/safe_exec.py", line 142, in safe_eval
+    return eval(_compile_code(code, filename="<safe_eval>", mode="eval"), eval_globals, eval_locals)
+  File "<safe_eval>", line 1, in <module>
+TypeError: 'NoneType' object is not callable
+
+```
+### Request Data
+```
+{
+	"type": "POST",
+	"args": {
+		"doc": "{\"name\":\"BID0003\",\"owner\":\"1@inxeoz.com\",\"creation\":\"2025-07-29 10:58:44.825799\",\"modified\":\"2025-07-29 10:59:57.507704\",\"modified_by\":\"4@inxeoz.com\",\"docstatus\":0,\"idx\":2,\"workflow_state\":\"UBO Approved By MD\",\"bid_document_status\":\"pending to publish bid\",\"requirement\":\"Laptop\",\"bid_type\":\"Open\",\"ubo_upload_status\":0,\"doctype\":\"Bid Document\",\"committee_member_table\":[],\"mom_table\":[],\"vendors_query_response\":[],\"bid_proposals\":[],\"__last_sync_on\":\"2025-07-29T05:34:23.478Z\"}",
+		"action": "Publish Bid"
+	},
+	"headers": {},
+	"error_handlers": {},
+	"url": "/api/method/frappe.model.workflow.apply_workflow",
+	"request_id": null
+}
+```
+### Response Data
+```
+{
+	"exception": "TypeError: 'NoneType' object is not callable",
+	"exc_type": "TypeError"
+}
+```

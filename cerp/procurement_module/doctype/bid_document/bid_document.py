@@ -48,7 +48,7 @@ class BidDocument(Document):
 
         #frappe.msgprint(f"Bid Document {self.name}")
 
-        return
+        
         def first_upper(text):
 
             str_arr = text.split(" ")

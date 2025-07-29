@@ -40,7 +40,7 @@ def create_bid_doc_workflow_combined():
         workflow_result = create_bid_workflow() #done
         
         # Create workflow transitions
-        transitions_result = create_bid_doc_workflow_transitions() #done from create_bid_workflow
+        #transitions_result = create_bid_doc_workflow_transitions() #done from create_bid_workflow
         
 
         role_profiles_setup = create_bid_doc_role_profiles() # done

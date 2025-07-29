@@ -38,7 +38,8 @@ def create_bid_workflow() -> Dict[str, Any]:
                         "state": transition['state'],
                         "action": transition['action'],
                         "next_state": transition['next_state'],
-                        "allowed": transition['allowed']
+                        "allowed": transition['allowed'],
+                        "condition" : transition['condition']
                     } for transition in workflow_transitions
                 ]
             }

@@ -45,6 +45,7 @@ frappe.ui.form.on('MOM TABLE', {
 
 frappe.ui.form.on("Bid Document", {
 
+
     onload: function(frm) {
         // Fetch data for existing rows when form loads
         if (frm.doc.mom_table) {
@@ -77,6 +78,44 @@ frappe.ui.form.on("Bid Document", {
    
         user =frappe.session.user
         user_roles = frappe.user_roles
+
+
+        // if (frappe.user.has_role('Marketing Team') && frm.doc.workflow_state === 'Bid Published') {
+        //     frm.add_custom_button(__('Button No Vendors'), function() {
+        //         // Show confirmation dialog
+        //         frappe.confirm(
+        //             'Are you sure you want to change the state to "No Vendors Query"?',
+        //             function() {
+        //                 // User clicked Yes
+        //                 frappe.call({
+        //                     method: 'frappe.client.set_value',
+        //                     args: {
+        //                         doctype: 'Bid Document',
+        //                         name: frm.doc.name,
+        //                         fieldname: 'workflow_state',
+        //                         value: 'No Vendors Query'
+        //                     },
+        //                     callback: function(r) {
+        //                         if(!r.exc) {
+        //                             frm.reload_doc();
+        //                             frappe.show_alert({
+        //                                 message: __('State updated to No Vendors Query'),
+        //                                 indicator: 'green'
+        //                             });
+        //                         }
+        //                     }
+        //                 });
+        //             },
+        //             function() {
+        //                 // User clicked No
+        //                 frappe.show_alert({
+        //                     message: __('Cancelled'),
+        //                     indicator: 'red'
+        //                 });
+        //             }
+        //         );
+        //     }, __('Actions'));
+        // }
 
         // want to hide some sections
     

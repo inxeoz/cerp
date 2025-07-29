@@ -75,6 +75,7 @@ def get_workflow_transitions_table():
             "next_state": "Bid Published",
             "allowed": "Marketing Team"
         },
+        
         {
             "no": 11,
             "state": "No Vendors Query",
@@ -229,7 +230,6 @@ def get_workflow_transitions_table():
         },
 
 
-
         {
             "no": 31,
             "state": "UBO Rejected By CGM",
@@ -283,6 +283,24 @@ def get_workflow_transitions_table():
             "action":  "Submit FECMOM For Approval",
             "next_state": "FECMOM Submitted For Approval",
             "allowed": "Procurement Officer"
+        },
+
+
+        {
+            "no": 37,
+            "state": "Bid Published",
+            "action":  "Submit As No Vendors Query",
+            "next_state": "No Vendors Query",
+            "allowed": "Marketing Team"
+        },
+        {
+            "no": 38,
+            "state": "Bid Published",
+            "action":  "Submit As Vendors Query",
+            "next_state": "Vendors Query",
+            "allowed": "Marketing Team",
+            "condition" : "doc.get('workflow_state') == 'Bid Published' and doc.get('vendors_query_response') and doc.get('vendors_query_response') != []
+                            "
         }
 
     ]
