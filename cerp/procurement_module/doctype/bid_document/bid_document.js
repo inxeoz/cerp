@@ -8,6 +8,29 @@ frappe.ui.form.on('MOM TABLE', {
         let row = locals[cdt][cdn];
         
         if (row.meeting_id) {
+            // Check for duplicates
+            let duplicate = false;
+            frm.doc.mom_table.forEach(function(item) {
+                if (item.name != cdn && item.meeting_id == row.meeting_id) {
+                    duplicate = true;
+                }
+            });
+            
+            if (duplicate) {
+                frappe.msgprint(__('This Meeting ID is already selected'));
+                //frappe.model.set_value(cdt, cdn, 'meeting_id', '');
+                
+
+                 
+                // Remove the duplicate row
+                frm.doc.committee_member_table = frm.doc.committee_member_table.filter(function(item) {
+                    return item.name !== cdn;
+                });
+                frm.refresh_field('committee_member_table');
+                return;
+            }
+            
+            // Fetch meeting details if no duplicate
             frappe.call({
                 method: 'frappe.client.get_value',
                 args: {
@@ -39,7 +62,7 @@ frappe.ui.form.on('MOM TABLE', {
     // <child_table_name>_add: Triggered when a new row is added to the child table.
     // <child_table_name>_remove: Triggered when a row is removed from the child table.
     // <field_name>: Triggered when the value of the field is changed.
-
+    
     mom_table_add: function(frm, cdt, cdn) {
         // Clear fields for new row
         let row = locals[cdt][cdn];
@@ -48,15 +71,34 @@ frappe.ui.form.on('MOM TABLE', {
     }
 });
 
-
-
 frappe.ui.form.on('Committee Member Table', {
 
-    // meeting id function
+    // member id function
     member_id: function(frm, cdt, cdn) {
         let row = locals[cdt][cdn];
         
         if (row.member_id) {
+            // Check for duplicates
+            let duplicate = false;
+            frm.doc.committee_member_table.forEach(function(item) {
+                if (item.name != cdn && item.member_id == row.member_id) {
+                    duplicate = true;
+                }
+            });
+            
+            if (duplicate) {
+                frappe.msgprint(__('This Member is already in the committee'));
+                //frappe.model.set_value(cdt, cdn, 'member_id', '');
+
+                // Remove the duplicate row
+                frm.doc.committee_member_table = frm.doc.committee_member_table.filter(function(item) {
+                    return item.name !== cdn;
+                });
+                frm.refresh_field('committee_member_table');
+                return;
+            }
+            
+            // Fetch member details if no duplicate
             frappe.call({
                 method: 'frappe.client.get_value',
                 args: {
@@ -65,33 +107,34 @@ frappe.ui.form.on('Committee Member Table', {
                     fieldname: ['member_name', 'designation', 'role_in_committee']
                 },
                 callback: function(r) {
-
-                    
                     if (r.message) {
-                        
-                        // Set values in the row
-                        if ( r.message.role_in_committee == "Chairman" ){
-                            //frappe.msgprint("Only One Chairman allowed")
-
-                            frm._chairman_count  = (frm._chairman_count || 0) + 1
-
-                            if (frm._chairman_count > 1) {
-                                frappe.msgprint("Only One Chairman allowed")
-
+                        // Check for Chairman role
+                        if (r.message.role_in_committee == "Chairman") {
+                            // Count existing chairmen (excluding current row)
+                            let chairman_count = 0;
+                            frm.doc.committee_member_table.forEach(function(item) {
+                                if (item.name != cdn && item.role_in_committee == "Chairman") {
+                                    chairman_count++;
+                                }
+                            });
+                            
+                            if (chairman_count > 0) {
+                                frappe.msgprint(__("Only One Chairman allowed"));
                                 frappe.model.set_value(cdt, cdn, {
-                                    'member_name': r.message.member_name || '',
-                                    'designation': r.message.designation || '',
-                                    'role_in_committee' :  '',
+                                    'member_id': '',
+                                    'member_name': '',
+                                    'designation': '',
+                                    'role_in_committee': ''
                                 });
-
-                                
-                                return //from here no updation
+                                return;
                             }
                         }
+                        
+                        // Set values in the row
                         frappe.model.set_value(cdt, cdn, {
                             'member_name': r.message.member_name || '',
                             'designation': r.message.designation || '',
-                            'role_in_committee' : r.message.role_in_committee || '',
+                            'role_in_committee': r.message.role_in_committee || '',
                         });
                     }
                 }
@@ -101,28 +144,26 @@ frappe.ui.form.on('Committee Member Table', {
             frappe.model.set_value(cdt, cdn, {
                 'member_name': '',
                 'designation': '',
-                'role_in_committee' : ''
+                'role_in_committee': ''
             });
         }
     },
     
-    // Trigger when a new row is added mom_table_add auto generated by frappe
-    // convention is 
-    // <child_table_name>_add: Triggered when a new row is added to the child table.
-    // <child_table_name>_remove: Triggered when a row is removed from the child table.
-    // <field_name>: Triggered when the value of the field is changed.
-
     committee_member_table_add: function(frm, cdt, cdn) {
         // Clear fields for new row
         let row = locals[cdt][cdn];
         row.member_name = '';
         row.designation = '';
+        row.role_in_committee = '';
+    },
+    
+    // Handle row removal to update chairman count
+    committee_member_table_remove: function(frm, cdt, cdn) {
+        frm.refresh_field('committee_member_table');
     }
 });
 
-
 frappe.ui.form.on("Bid Document", {
-
 
     onload: function(frm) {
         // Fetch data for existing rows when form loads
@@ -135,52 +176,36 @@ frappe.ui.form.on("Bid Document", {
             });
         }
 
-
         if (frm.doc.committee_member_table) {
-
-            frm._chairman_count = 0;
-            chairman_count  = 0
             frm.doc.committee_member_table.forEach(function(row) {
-                if (row.member_id ) {
+                if (row.member_id) {
                     frm.trigger('member_id', row.doctype, row.name);
                 }
-
-               
             });
         }
-
     },
 
     refresh(frm) {
-   
-        user =frappe.session.user
-        user_roles = frappe.user_roles
-    
+        user = frappe.session.user;
+        user_roles = frappe.user_roles;
 
-        if (frm.doc.workflow_state === "Rejected" && user_roles.includes('Procurement Officer') ) {
+        if (frm.doc.workflow_state === "Rejected" && user_roles.includes('Procurement Officer')) {
             frm.add_custom_button("Use as Template", function() {
-                // Your logic to create bid form goes here
-
-                   let fields = [
-                    // "bid_document_status",
+                let fields = [
                     "bid_title",
                     "description__scope_of_work",
                     "bid_type",
                     "submission_start",
                     "submission_end"
                 ];
-                 // Create a data object for new_doc fields
+                
                 let field_data = {};
                 fields.forEach(field => {
                     field_data[field] = frm.doc[field];
                 });
 
-                // Create the new document with these field values
                 frappe.new_doc("Bid Document", field_data);
-                
             });
         }
-
     }
 });
-
