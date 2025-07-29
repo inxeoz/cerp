@@ -134,7 +134,8 @@
    "default": "0",
    "fieldname": "ubo_upload_status",
    "fieldtype": "Check",
-   "label": "UBO Upload Status"
+   "label": "UBO Upload Status",
+   "read_only": 1
   },
   {
    "fieldname": "vendors_query_response",
@@ -178,7 +179,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-29 01:04:08.242914",
+ "modified": "2025-07-29 12:49:43.013241",
  "modified_by": "Administrator",
  "module": "Procurement Module",
  "name": "Bid Document",

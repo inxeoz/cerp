@@ -43,6 +43,12 @@ class BidDocument(Document):
     def before_save(self):
         # Get the current value from the database before this save
         self._previous_workflow_state = frappe.db.get_value(self.doctype, self.name, "workflow_state")
+        # Check if document is attached
+        if self.attach_document:
+            # Set UBO Upload Status to 1
+            self.ubo_upload_status = 1
+        else:
+            self.ubo_upload_status = 0
 
     def on_update(self):
 

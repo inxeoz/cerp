@@ -425,6 +425,20 @@ def get_merged_bid_workflow_states() -> List[Dict[str, Any]]:
             "only_visible_to": [],
             "only_hide_to": [],
             "visible_section": fecmom_allowed_section
+        },
+
+        {
+            "workflow_state_name": "Vendors Query",
+            "style": "Danger",
+            "icon": "x-circle",
+            "doc_status": 0,
+            "is_optional_state": 0,
+            "update_field": "bid_document_status",
+            "update_value": "Response Sheet Submitetd By Vendors",
+            "only_allow_edit_for": "Marketing Team",
+            "only_visible_to": [],
+            "only_hide_to": [],
+            "visible_section": fecmom_allowed_section
         }
     ]
 

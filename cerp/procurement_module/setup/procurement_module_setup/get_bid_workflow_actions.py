@@ -55,6 +55,14 @@ def get_bid_workflow_actions():
         },
         {
             "workflow_action_name": "Submit FECMOM For Approval"
+        },
+
+        {
+              "workflow_action_name":  "Submit As No Vendors Query"
+        },
+
+        {
+            "workflow_action_name":   "Submit As Vendors Query"
         }
     ]
     

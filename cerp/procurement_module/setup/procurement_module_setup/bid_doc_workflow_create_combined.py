@@ -55,7 +55,6 @@ def create_bid_doc_workflow_combined():
             "status": "success",
             "actions": actions_result,
             "states": states_result,
-            "transitions": transitions_result,
             "workflow": workflow_result
         }
     
