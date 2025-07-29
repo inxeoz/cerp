@@ -310,11 +310,32 @@ fixtures = [
     {
         "doctype": "Workflow State",
 
-    },
-    {
-        "doctype": "User",
-
     }
+    # ,
+    # {
+    #     "doctype": "User",
+
+    # }
 ]
 
 ## bench --site msite.local export-fixtures --app cerp
+
+
+### how to import fixtures 
+### commom default one will automatically will be imported on installing app
+### for error prone fixtures , you can copy to other folder i.e. user doctype
+### bench --site asite.local set-config developer_mode 1
+### bench --site asite.local migrate
+
+
+# bench --site asite.local console
+# frappe.db.set_single_value("System Settings", "disable_standard_email_footer", 1)
+# frappe.db.set_single_value("System Settings", "disable_email_sending", 1)
+# frappe.db.commit()
+# exit()
+
+# bench --site asite.local install-app cerp
+# bench --site asite.local console
+
+# frappe.db.set_single_value("System Settings", "disable_email_sending", 0)
+# frappe.db.commit()
