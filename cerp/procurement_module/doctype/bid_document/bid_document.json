@@ -2,7 +2,7 @@
  "actions": [],
  "allow_rename": 1,
  "autoname": "BID.####.",
- "creation": "2025-07-21 21:57:52.423186",
+ "creation": "2025-07-29 23:19:36.888710",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
@@ -28,7 +28,8 @@
   "vendors_query_response",
   "add_new_response",
   "corrigendum_section",
-  "jk",
+  "link_to_corrigendum",
+  "corrigendum_uploaded",
   "bid_proposal_section",
   "bid_proposals"
  ],
@@ -115,11 +116,6 @@
    "label": "Corrigendum"
   },
   {
-   "fieldname": "jk",
-   "fieldtype": "Data",
-   "label": "Link To Corrigendum"
-  },
-  {
    "fieldname": "mom_table",
    "fieldtype": "Table",
    "label": "Name",
@@ -180,13 +176,26 @@
    "fieldtype": "Data",
    "label": "Chariman",
    "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "corrigendum_uploaded",
+   "fieldtype": "Check",
+   "label": "Corrigendum Uploaded",
+   "read_only": 1
+  },
+  {
+   "fieldname": "link_to_corrigendum",
+   "fieldtype": "Link",
+   "label": "Link To Corrigendum",
+   "options": "Corrigendum"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-29 14:43:55.116761",
+ "modified": "2025-07-30 00:15:02.855738",
  "modified_by": "Administrator",
  "module": "Procurement Module",
  "name": "Bid Document",

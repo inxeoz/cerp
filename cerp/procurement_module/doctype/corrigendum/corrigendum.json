@@ -2,7 +2,7 @@
  "actions": [],
  "allow_rename": 1,
  "autoname": "CR.####.",
- "creation": "2025-07-21 21:58:07.859503",
+ "creation": "2025-07-29 23:19:36.940862",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
@@ -54,7 +54,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-28 16:13:29.844119",
+ "modified": "2025-07-30 00:11:40.672173",
  "modified_by": "Administrator",
  "module": "Procurement Module",
  "name": "Corrigendum",
@@ -72,6 +72,18 @@
    "role": "System Manager",
    "share": 1,
    "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Procurement Officer",
+   "share": 1,
    "write": 1
   }
  ],

@@ -50,6 +50,14 @@ class BidDocument(Document):
         else:
             self.ubo_upload_status = 0
 
+
+
+        if self.link_to_corrigendum:
+            # Set UBO Upload Status to 1
+            self.corrigendum_uploaded = 1
+        else:
+            self.corrigendum_uploaded = 0
+
     def on_update(self):
 
         #frappe.msgprint(f"Bid Document {self.name}")

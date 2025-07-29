@@ -311,11 +311,11 @@ fixtures = [
         "doctype": "Workflow State",
 
     }
-    # ,
-    # {
-    #     "doctype": "User",
+    ,
+    {
+        "doctype": "User",
 
-    # }
+    }
 ]
 
 ## bench --site msite.local export-fixtures --app cerp
