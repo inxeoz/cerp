@@ -326,6 +326,7 @@ fixtures = [
 ### for error prone fixtures , you can copy to other folder i.e. user doctype
 
 ### for user doctype set "send_welcome_email": 0 
+### also set "new_password": "asd@123", skipp for administrator , current user inxeoz, guest 
 ### bench --site asite.local set-config developer_mode 1
 ### bench --site asite.local migrate
 
