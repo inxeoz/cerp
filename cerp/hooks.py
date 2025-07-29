@@ -250,8 +250,38 @@ permission_query_conditions = {
 
 
 
+# fixtures = [
+#     {
+#         "doctype": "Custom DocPerm"
+#     }
+# ]
+
+
+# For Bid Document specific export
 fixtures = [
+    # Core Bid DocTypes
+    {
+        "doctype": "DocType",
+        "filters": {
+            "module": "Procurement Module"
+        }
+    },
+    
+    {
+        "doctype": "Role"
+    },
+    
+    # Bid Document Permissions
     {
         "doctype": "Custom DocPerm"
+    },
+    
+    
+    # Bid Workflow
+    {
+        "doctype": "Workflow",
+        "filters": {
+            "name": "Bid Document Workflow"
+        }
     }
 ]
