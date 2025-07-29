@@ -302,6 +302,18 @@ fixtures = [
      {
         "doctype": "Custom HTML Block",
 
+    },
+    {
+        "doctype": "Workflow Action Master",
+
+    },
+    {
+        "doctype": "Workflow State",
+
+    },
+    {
+        "doctype": "User",
+
     }
 ]
 

@@ -1,0 +1,308 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "question-sign",
+  "modified": "2025-07-29 17:39:23.094873",
+  "name": "Pending",
+  "style": "",
+  "workflow_state_name": "Pending"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "ok-sign",
+  "modified": "2025-07-29 17:39:23.095466",
+  "name": "Approved",
+  "style": "Success",
+  "workflow_state_name": "Approved"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "remove",
+  "modified": "2025-07-29 17:39:23.095978",
+  "name": "Rejected",
+  "style": "Danger",
+  "workflow_state_name": "Rejected"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "file",
+  "modified": "2025-07-29 17:55:31.106880",
+  "name": "Draft",
+  "style": "Primary",
+  "workflow_state_name": "Draft"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "share",
+  "modified": "2025-07-29 17:55:31.113051",
+  "name": "RQ Submitted For Approval",
+  "style": "Warning",
+  "workflow_state_name": "RQ Submitted For Approval"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "check",
+  "modified": "2025-07-29 17:55:31.114343",
+  "name": "RQ Approved By MD",
+  "style": "Success",
+  "workflow_state_name": "RQ Approved By MD"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "share",
+  "modified": "2025-07-29 17:55:31.115115",
+  "name": "BCCM Submitted For Approval",
+  "style": "Warning",
+  "workflow_state_name": "BCCM Submitted For Approval"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "globe",
+  "modified": "2025-07-29 17:55:31.115764",
+  "name": "BCCM Approved By PD",
+  "style": "Info",
+  "workflow_state_name": "BCCM Approved By PD"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "globe",
+  "modified": "2025-07-29 17:55:31.116434",
+  "name": "BCCM Approved By CGM",
+  "style": "Info",
+  "workflow_state_name": "BCCM Approved By CGM"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "globe",
+  "modified": "2025-07-29 17:55:31.117104",
+  "name": "BCCM Approved By MD",
+  "style": "Success",
+  "workflow_state_name": "BCCM Approved By MD"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "share",
+  "modified": "2025-07-29 17:55:31.117744",
+  "name": "UBO Submitted For Approval",
+  "style": "Warning",
+  "workflow_state_name": "UBO Submitted For Approval"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "globe",
+  "modified": "2025-07-29 17:55:31.118384",
+  "name": "UBO Approved By CGM",
+  "style": "Info",
+  "workflow_state_name": "UBO Approved By CGM"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "globe",
+  "modified": "2025-07-29 17:55:31.118995",
+  "name": "UBO Approved By MD",
+  "style": "Success",
+  "workflow_state_name": "UBO Approved By MD"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "globe",
+  "modified": "2025-07-29 17:55:31.119612",
+  "name": "Bid Published",
+  "style": "Success",
+  "workflow_state_name": "Bid Published"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "globe",
+  "modified": "2025-07-29 17:55:31.120227",
+  "name": "No Vendors Query",
+  "style": "Info",
+  "workflow_state_name": "No Vendors Query"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "globe",
+  "modified": "2025-07-29 17:55:31.120846",
+  "name": "TECMOM Submitted For Approval",
+  "style": "Danger",
+  "workflow_state_name": "TECMOM Submitted For Approval"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "upload",
+  "modified": "2025-07-29 17:55:31.121454",
+  "name": "TECMOM Uploaded",
+  "style": "Warning",
+  "workflow_state_name": "TECMOM Uploaded"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "globe",
+  "modified": "2025-07-29 17:55:31.122142",
+  "name": "TECMOM Approved By CGM",
+  "style": "Info",
+  "workflow_state_name": "TECMOM Approved By CGM"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "globe",
+  "modified": "2025-07-29 17:55:31.122762",
+  "name": "TECMOM Approved By MD",
+  "style": "Success",
+  "workflow_state_name": "TECMOM Approved By MD"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "globe",
+  "modified": "2025-07-29 17:55:31.123369",
+  "name": "FECMOM Submitted For Approval",
+  "style": "Danger",
+  "workflow_state_name": "FECMOM Submitted For Approval"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "upload",
+  "modified": "2025-07-29 17:55:31.123991",
+  "name": "FECMOM Uploaded",
+  "style": "Warning",
+  "workflow_state_name": "FECMOM Uploaded"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "globe",
+  "modified": "2025-07-29 17:55:31.124588",
+  "name": "FECMOM Approved By CGM",
+  "style": "Info",
+  "workflow_state_name": "FECMOM Approved By CGM"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "globe",
+  "modified": "2025-07-29 17:55:31.125206",
+  "name": "FECMOM Approved By MD",
+  "style": "Success",
+  "workflow_state_name": "FECMOM Approved By MD"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "globe",
+  "modified": "2025-07-29 17:55:31.125920",
+  "name": "RQ Rejected By MD",
+  "style": "Danger",
+  "workflow_state_name": "RQ Rejected By MD"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "globe",
+  "modified": "2025-07-29 17:55:31.126550",
+  "name": "BCCM Rejected By PD",
+  "style": "Danger",
+  "workflow_state_name": "BCCM Rejected By PD"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "globe",
+  "modified": "2025-07-29 17:55:31.127147",
+  "name": "BCCM Rejected By CGM",
+  "style": "Danger",
+  "workflow_state_name": "BCCM Rejected By CGM"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "globe",
+  "modified": "2025-07-29 17:55:31.127767",
+  "name": "BCCM Rejected By MD",
+  "style": "Danger",
+  "workflow_state_name": "BCCM Rejected By MD"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "globe",
+  "modified": "2025-07-29 17:55:31.128362",
+  "name": "UBO Rejected By CGM",
+  "style": "Danger",
+  "workflow_state_name": "UBO Rejected By CGM"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "globe",
+  "modified": "2025-07-29 17:55:31.128954",
+  "name": "UBO Rejected By MD",
+  "style": "Danger",
+  "workflow_state_name": "UBO Rejected By MD"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "globe",
+  "modified": "2025-07-29 17:55:31.129581",
+  "name": "TECMOM Rejected By CGM",
+  "style": "Danger",
+  "workflow_state_name": "TECMOM Rejected By CGM"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "globe",
+  "modified": "2025-07-29 17:55:31.130207",
+  "name": "TECMOM Rejected By MD",
+  "style": "Danger",
+  "workflow_state_name": "TECMOM Rejected By MD"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "globe",
+  "modified": "2025-07-29 17:55:31.130914",
+  "name": "FECMOM Rejected By CGM",
+  "style": "Danger",
+  "workflow_state_name": "FECMOM Rejected By CGM"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "globe",
+  "modified": "2025-07-29 17:55:31.131699",
+  "name": "FECMOM Rejected By MD",
+  "style": "Danger",
+  "workflow_state_name": "FECMOM Rejected By MD"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "globe",
+  "modified": "2025-07-29 17:55:31.132443",
+  "name": "Vendors Query",
+  "style": "Danger",
+  "workflow_state_name": "Vendors Query"
+ }
+]

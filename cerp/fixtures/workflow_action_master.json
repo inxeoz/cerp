@@ -1,0 +1,156 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2025-07-29 17:39:23.101541",
+  "name": "Approve",
+  "workflow_action_name": "Approve"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2025-07-29 17:39:23.101910",
+  "name": "Reject",
+  "workflow_action_name": "Reject"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2025-07-29 17:39:23.102247",
+  "name": "Review",
+  "workflow_action_name": "Review"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2025-07-29 17:55:30.963056",
+  "name": "Submit RQ For Approval",
+  "workflow_action_name": "Submit RQ For Approval"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2025-07-29 17:55:31.075170",
+  "name": "Approve RQ",
+  "workflow_action_name": "Approve RQ"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2025-07-29 17:55:31.076209",
+  "name": "Submit BCCM For Approval",
+  "workflow_action_name": "Submit BCCM For Approval"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2025-07-29 17:55:31.077799",
+  "name": "Approve BCCM",
+  "workflow_action_name": "Approve BCCM"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2025-07-29 17:55:31.079095",
+  "name": "Submit UBO For Approval",
+  "workflow_action_name": "Submit UBO For Approval"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2025-07-29 17:55:31.080490",
+  "name": "Approve UBO",
+  "workflow_action_name": "Approve UBO"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2025-07-29 17:55:31.081505",
+  "name": "Publish Bid",
+  "workflow_action_name": "Publish Bid"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2025-07-29 17:55:31.082478",
+  "name": "Submit for Approval",
+  "workflow_action_name": "Submit for Approval"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2025-07-29 17:55:31.083561",
+  "name": "Approve TECMOM",
+  "workflow_action_name": "Approve TECMOM"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2025-07-29 17:55:31.084547",
+  "name": "Approve FECMOM",
+  "workflow_action_name": "Approve FECMOM"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2025-07-29 17:55:31.085605",
+  "name": "Reject RQ",
+  "workflow_action_name": "Reject RQ"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2025-07-29 17:55:31.086852",
+  "name": "Reject BCCM",
+  "workflow_action_name": "Reject BCCM"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2025-07-29 17:55:31.088164",
+  "name": "Reject UBO",
+  "workflow_action_name": "Reject UBO"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2025-07-29 17:55:31.089401",
+  "name": "Reject TECMOM",
+  "workflow_action_name": "Reject TECMOM"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2025-07-29 17:55:31.090658",
+  "name": "Reject FECMOM",
+  "workflow_action_name": "Reject FECMOM"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2025-07-29 17:55:31.091992",
+  "name": "Submit TECMOM For Approval",
+  "workflow_action_name": "Submit TECMOM For Approval"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2025-07-29 17:55:31.093296",
+  "name": "Submit FECMOM For Approval",
+  "workflow_action_name": "Submit FECMOM For Approval"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2025-07-29 17:55:31.094780",
+  "name": "Submit As No Vendors Query",
+  "workflow_action_name": "Submit As No Vendors Query"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2025-07-29 17:55:31.095875",
+  "name": "Submit As Vendors Query",
+  "workflow_action_name": "Submit As Vendors Query"
+ }
+]
