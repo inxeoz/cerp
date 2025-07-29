@@ -324,6 +324,8 @@ fixtures = [
 ### how to import fixtures 
 ### commom default one will automatically will be imported on installing app
 ### for error prone fixtures , you can copy to other folder i.e. user doctype
+
+### for user doctype set "send_welcome_email": 0 
 ### bench --site asite.local set-config developer_mode 1
 ### bench --site asite.local migrate
 

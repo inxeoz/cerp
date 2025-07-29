@@ -1,0 +1,19 @@
+To reset the Administrator password in Frappe/ERPNext, especially if you're working on a local development environment (as it seems from your prompt), follow these steps:
+✅ Option 1: Use bench console to reset it manually
+
+    Run the Frappe console:
+
+bench --site l.site console
+
+Run the following Python code inside the console:
+
+import frappe
+from frappe.utils.password import update_password
+
+update_password('Administrator', 'your_new_password')
+frappe.db.commit()
+
+Replace 'your_new_password' with your actual new password.
+
+Type exit to leave the console.
+
